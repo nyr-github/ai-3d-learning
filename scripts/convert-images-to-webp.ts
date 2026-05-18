@@ -38,6 +38,7 @@ async function convertImagesToWebp(options: ImageOptions): Promise<void> {
     ".bmp",
     ".tiff",
     ".tif",
+    ".webp",
   ];
 
   // Get all image files
@@ -120,7 +121,7 @@ const outputDir = process.argv[3];
 convertImagesToWebp({
   inputDir,
   outputDir,
-  maxWidth: 400,
+  maxWidth: 200,
   quality: 80,
 }).catch((error) => {
   console.error("❌ Error during execution:", error);
