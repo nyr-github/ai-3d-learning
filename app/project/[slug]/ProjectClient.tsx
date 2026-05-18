@@ -65,7 +65,7 @@ export function ProjectClient({ project }: ProjectClientProps) {
 
   return (
     <div className="h-dvh grid grid-rows-[auto_1fr_auto] px-1 pb-3 gap-3 container w-full mx-auto overflow-hidden sm:px-3  sm:gap-2">
-      <Header />
+      <Header project={project} />
       {loading || !activeEntity ? (
         <main className="min-h-0 flex items-center justify-center">
           <div className="text-center">
@@ -116,7 +116,7 @@ export function ProjectClient({ project }: ProjectClientProps) {
             <ResizablePanel defaultSize="20%" minSize="15%" maxSize="30%">
               <ScrollArea className="h-full bg-(--bg-card)  rounded-l-xl shadow-sm ">
                 <EntitySidebar
-                  entities={project.models}
+                  project={project}
                   activeId={activeEntity.id}
                   onSelect={handleSelectEntity}
                 />
@@ -153,7 +153,7 @@ export function ProjectClient({ project }: ProjectClientProps) {
               </SheetHeader>
               <ScrollArea className="h-full">
                 <EntitySidebar
-                  entities={project.models}
+                  project={project}
                   activeId={activeEntity.id}
                   onSelect={handleSelectEntity}
                 />

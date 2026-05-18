@@ -14,7 +14,7 @@ export default async function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-(--ink-primary) tracking-tight">
             Explore Science in
             <span className="inline-block mx-2 bg-linear-to-r from-(--accent-primary) to-(--accent-secondary) bg-clip-text text-transparent">
-              3D
+              Show3D
             </span>
           </h2>
           <p className="text-base text-(--ink-secondary) max-w-2xl mx-auto leading-relaxed">

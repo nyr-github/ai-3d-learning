@@ -9,11 +9,11 @@
     "start": "next start",
     "lint": "next lint",
     "optimize:glb": "npx tsx scripts/optimize-glb.ts",
-    "optimize:glb:models": "npx tsx scripts/optimize-glb.ts ./public/models",
+    "optimize:glb:models": "npx tsx scripts/optimize-glb.ts ./public/models/new",
     "analyze:glb": "npx tsx scripts/analyze-glb.ts",
     "analyze:glb:models": "npx tsx scripts/analyze-glb.ts ./public/models",
     "convert:webp": "npx tsx scripts/convert-images-to-webp.ts",
-    "convert:webp:images": "npx tsx scripts/convert-images-to-webp.ts ./public/models",
+    "convert:webp:images": "npx tsx scripts/convert-images-to-webp.ts ./public/models/new",
     "update:model-sizes": "npx tsx scripts/update-model-sizes.ts"
   },
   "dependencies": {

@@ -1,23 +1,24 @@
 "use client";
 import { useState } from "react";
-import type { Entity3D } from "@/data/types";
+import type { Entity3D, Project } from "@/data/types";
 import { EntityItem } from "@/components/EntityItem";
 import { List, ChevronRight } from "lucide-react";
 
 interface Props {
-  entities: Entity3D[];
+  // entities: Entity3D[];
   activeId: string;
+  project: Project;
   onSelect: (id: string) => void;
 }
 
-export function EntitySidebar({ entities, activeId, onSelect }: Props) {
+export function EntitySidebar({ project, activeId, onSelect }: Props) {
   const [expandedCategory, setExpandedCategory] = useState<string>(
-    entities[0]?.mainCategory || "",
+    project.models[0]?.mainCategory || "",
   );
 
   // Get all main categories
   const mainCategories = Array.from(
-    new Set(entities.map((e) => e.mainCategory)),
+    new Set(project.models.map((e) => e.mainCategory)),
   );
 
   const toggleCategory = (category: string) => {
@@ -30,15 +31,15 @@ export function EntitySidebar({ entities, activeId, onSelect }: Props) {
         <header className="hidden md:flex items-center gap-2 px-4 py-3 border-b border-(--border-secondary) bg-linear-to-r from-(--bg-secondary) to-(--bg-card)">
           <List className="w-4 h-4 text-(--accent-primary)" />
           <h2 className="text-sm font-semibold text-(--ink-primary) uppercase tracking-wider">
-            3D Entities
+            {project.name}
           </h2>
           <span className="ml-auto text-xs font-(--font-mono) text-(--ink-muted) bg-(--bg-secondary) px-2 py-0.5 rounded">
-            {entities.length}
+            {project.models.length}
           </span>
         </header>
         <div className="flex-1 overflow-y-auto px-3">
           {mainCategories.map((category) => {
-            const categoryEntities = entities.filter(
+            const categoryEntities = project.models.filter(
               (e) => e.mainCategory === category,
             );
             const isExpanded = expandedCategory === category;

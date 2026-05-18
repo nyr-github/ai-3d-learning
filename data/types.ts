@@ -28,8 +28,9 @@ export interface Model3DMetadata {
 
 // AI Generation Prompts
 export interface GenerationPrompts {
-  frontPrompt: string;
-  backPrompt: string;
+  frontPrompt?: string;
+  backPrompt?: string;
+  full3DPrompt?: string;
 }
 
 // Attribute Key-Value Pair
