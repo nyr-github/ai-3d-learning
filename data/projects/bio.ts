@@ -69,7 +69,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/plant-cell-1.glb"),
       imageUrl: asset("images/plant-cell.webp"),
-      fileSize: 2746988,
+      fileSize: 1712432,
       defaultRotation: { x: 60, y: 20, z: 0 },
       displayScale: 1.4,
     },
@@ -140,7 +140,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/animal-cell.glb"),
       imageUrl: asset("images/animal-cell.webp"),
-      fileSize: 10673912,
+      fileSize: 2649984,
       defaultRotation: { x: 150, y: 20, z: 0 },
       displayScale: 1.2,
     },
@@ -209,7 +209,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/bacterial-cell.glb"),
       imageUrl: asset("images/bacterial-cell.webp"),
-      fileSize: 2984560,
+      fileSize: 2085368,
       defaultRotation: { x: 0, y: -51.57, z: 0 },
       displayScale: 1.5,
     },
@@ -284,7 +284,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/white-blood-cell.glb"),
       imageUrl: asset("images/white-blood-cell.webp"),
-      fileSize: 10812336,
+      fileSize: 2344020,
       defaultRotation: { x: 0, y: -45, z: 0 },
       displayScale: 1.4,
     },
@@ -356,7 +356,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/neuron.glb"),
       imageUrl: asset("images/neuron.webp"),
-      fileSize: 2298720,
+      fileSize: 1226556,
       defaultRotation: { x: 0, y: -45, z: 0 },
       displayScale: 1.8,
     },
@@ -434,7 +434,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/mitochondrion.glb"),
       imageUrl: asset("images/mitochondrion.webp"),
-      fileSize: 2129324,
+      fileSize: 1296660,
       defaultRotation: { x: 0, y: -45, z: 0 },
       displayScale: 1.4,
     },
@@ -517,7 +517,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/chloroplast.glb"),
       imageUrl: asset("images/chloroplast.webp"),
-      fileSize: 2014460,
+      fileSize: 1159516,
       defaultRotation: { x: 0, y: -45, z: 0 },
       displayScale: 1.4,
     },
@@ -597,7 +597,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/cell-membrane.glb"),
       imageUrl: asset("images/cell-membrane.webp"),
-      fileSize: 5982004,
+      fileSize: 4838816,
       defaultRotation: { x: 0, y: -45, z: 0 },
       displayScale: 1.3,
     },
@@ -673,7 +673,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/dna.glb"),
       imageUrl: asset("images/dna.webp"),
-      fileSize: 9977020,
+      fileSize: 1704672,
       defaultRotation: { x: 0, y: 0, z: 0 },
       displayScale: 1.2,
     },
@@ -750,7 +750,7 @@ export const BIO_ENTITIES: Entity3D[] = [
     model3D: {
       modelUrl: asset("models/bacteriophage.glb"),
       imageUrl: asset("images/bacteriophage.webp"),
-      fileSize: 2600432,
+      fileSize: 1380776,
       defaultRotation: { x: 0, y: -90, z: 0 },
       displayScale: 1.6,
     },

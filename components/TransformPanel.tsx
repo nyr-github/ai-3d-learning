@@ -56,11 +56,11 @@ export function TransformPanel({ transform }: Props) {
           </div>
 
           {/* Scale */}
-          <div className="flex items-center justify-between gap-4 pt-1 border-t border-(--border-secondary)">
+          <div className="flex items-center justify-between gap-4 ">
             <span className="text-xs text-(--ink-muted) font-medium">
               Scale
             </span>
-            <span className="text-xs font-mono text-(--accent-primary) bg-(--bg-secondary) px-2 py-0.5 rounded">
+            <span className="text-xs font-mono text-(--ink-primary) bg-(--bg-secondary) px-2 py-0.5 rounded">
               {formatNum(transform.scale, 2)}x
             </span>
           </div>

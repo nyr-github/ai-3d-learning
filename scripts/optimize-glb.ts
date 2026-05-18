@@ -5,8 +5,14 @@ import { join, resolve } from "path";
 interface OptimizeOptions {
   inputDir: string;
   outputDir?: string;
+  /** Texture compression format (re-encodes embedded textures) */
   textureCompress?: "webp" | "avif" | "jpeg" | "png";
+  /** Mesh compression algorithm */
   compress?: "draco" | "meshopt";
+  /** Texture resize (max width/height in pixels) */
+  textureResize?: [number, number];
+  /** Remove unused vertex attributes */
+  prune?: boolean;
 }
 
 async function optimizeGlbFiles(options: OptimizeOptions): Promise<void> {
@@ -15,6 +21,8 @@ async function optimizeGlbFiles(options: OptimizeOptions): Promise<void> {
     outputDir,
     textureCompress = "webp",
     compress = "draco",
+    textureResize,
+    prune = true,
   } = options;
 
   const resolvedInputDir = resolve(inputDir);
@@ -59,7 +67,27 @@ async function optimizeGlbFiles(options: OptimizeOptions): Promise<void> {
     console.log(`\n⏳ Processing: ${file}`);
 
     try {
-      const command = `npx @gltf-transform/cli optimize "${inputFile}" "${outputFile}" --texture-compress ${textureCompress} --compress ${compress}`;
+      // Build optimization command
+      const commandParts = [
+        `npx @gltf-transform/cli optimize`,
+        `"${inputFile}"`,
+        `"${outputFile}"`,
+        `--texture-compress ${textureCompress}`,
+        `--compress ${compress}`,
+      ];
+
+      // Add optional parameters
+      if (textureResize) {
+        commandParts.push(
+          `--texture-resize ${textureResize[0]}x${textureResize[1]}`,
+        );
+      }
+
+      if (prune) {
+        commandParts.push(`--prune`);
+      }
+
+      const command = commandParts.join(" ");
 
       execSync(command, {
         stdio: "inherit",
@@ -104,6 +132,7 @@ const outputDir = process.argv[3];
 optimizeGlbFiles({
   inputDir,
   outputDir,
+  textureCompress: "avif",
 }).catch((error) => {
   console.error("❌ Error during execution:", error);
   process.exit(1);

@@ -13,6 +13,7 @@ import {
   useViewerControls,
 } from "./ViewerControls";
 import { TransformPanel } from "./TransformPanel";
+import { ModelInfoPanel } from "./ModelInfoPanel";
 import {
   evictModelFromCache,
   getCachedTask,
@@ -244,6 +245,7 @@ export function EntityViewer({
         onToggleFullscreen={handleToggleFullscreen}
       />
       <TransformPanel transform={transform} />
+      <ModelInfoPanel entity={entity} />
 
       {!isReady && (
         <ProgressOverlay

@@ -113,7 +113,7 @@ async function updateModelFileSizes(
 }
 
 // Get paths from command line arguments
-const modelsFilePath = process.argv[2] || "./app/data/models.ts";
+const modelsFilePath = process.argv[2] || "./data/projects/bio.ts";
 const modelsDir = process.argv[3] || "./public/models";
 
 updateModelFileSizes({
