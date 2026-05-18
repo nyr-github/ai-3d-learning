@@ -278,7 +278,7 @@ const ENTITIES: Entity3D[] = [
       modelUrl: "/models/white-blood-cell.glb",
       imageUrl: "/models/white-blood-cell.webp",
       fileSize: 3531228,
-      defaultRotation: { x: 0, y: 270, z: 20 },
+      defaultRotation: { x: 0, y: 0, z: 20 },
       displayScale: 1.1,
     },
     generationPrompts: {
@@ -509,8 +509,8 @@ const ENTITIES: Entity3D[] = [
       modelUrl: "/models/chloroplast.glb",
       imageUrl: "/models/chloroplast.webp",
       fileSize: 1102320,
-      defaultRotation: { x: 0, y: -45, z: 0 },
-      displayScale: 1.4,
+      defaultRotation: { x: 0, y: 0, z: 0 },
+      displayScale: 1.0,
     },
     generationPrompts: {
       full3DPrompt:
@@ -588,8 +588,8 @@ const ENTITIES: Entity3D[] = [
       modelUrl: "/models/cell-membrane.glb",
       imageUrl: "/models/cell-membrane.webp",
       fileSize: 4790932,
-      defaultRotation: { x: 0, y: -45, z: 0 },
-      displayScale: 1.3,
+      defaultRotation: { x: 45, y: 0, z: 45 },
+      displayScale: 1.1,
     },
     generationPrompts: {
       full3DPrompt:
@@ -739,8 +739,8 @@ const ENTITIES: Entity3D[] = [
       modelUrl: "/models/bacteriophage.glb",
       imageUrl: "/models/bacteriophage.webp",
       fileSize: 2202052,
-      defaultRotation: { x: 0, y: -90, z: 0 },
-      displayScale: 1.6,
+      defaultRotation: { x: 0, y: 0, z: 0 },
+      displayScale: 1.2,
     },
     generationPrompts: {
       full3DPrompt:

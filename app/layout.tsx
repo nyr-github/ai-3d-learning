@@ -4,12 +4,12 @@ import { Footer, Header } from "@/components/Layout";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Cell Architecture Studio · Microscopic Journey of Life",
+  title: "Show3D Lab · Science Communication",
   description:
-    "Cell Architecture Studio · Explore the Beauty of Life Under the Microscope",
+    "Discover the beauty of biological entities, chemical molecules, and physical structures through interactive 3D models. Perfect for classroom teaching and self-study.",
 };
 
 export const viewport: Viewport = {
