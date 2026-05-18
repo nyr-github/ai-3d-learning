@@ -60,12 +60,7 @@ export function Header({ project }: HeaderProps) {
   return (
     <header className="flex items-center justify-between md:justify-start gap-6 md:px-4 py-3 bg-linear-to-r from-(--bg-card) to-(--bg-secondary) ">
       <div className="flex items-center gap-2">
-        <div
-          className="w-12 h-12 grid place-items-center bg-linear-to-br from-(--accent-primary) to-(--accent-secondary) rounded-lg shadow-md text-white"
-          aria-hidden="true"
-        >
-          <BrandLogoIcon />
-        </div>
+        <BrandLogoIcon />
         <div>
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <h1 className="text-2xl font-bold tracking-tight text-(--ink-primary)">

@@ -66,20 +66,6 @@ export function CellRingIcon() {
 /** Brand Logo Icon */
 export function BrandLogoIcon() {
   return (
-    <svg viewBox="0 0 48 48" width="36" height="36">
-      <defs>
-        <radialGradient id="bm" cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stopColor="#c8e6a0" />
-          <stop offset="55%" stopColor="#7fb069" />
-          <stop offset="100%" stopColor="#3f6b3a" />
-        </radialGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" fill="url(#bm)" />
-      <circle cx="24" cy="24" r="7" fill="#5c2a8c" opacity="0.85" />
-      <circle cx="14" cy="16" r="2.4" fill="#f1c40f" opacity="0.85" />
-      <circle cx="34" cy="14" r="1.8" fill="#e67e22" opacity="0.85" />
-      <circle cx="34" cy="32" r="2.2" fill="#1e88e5" opacity="0.85" />
-      <circle cx="14" cy="34" r="1.9" fill="#c0392b" opacity="0.85" />
-    </svg>
+    <img src="/icon-192.png" alt="Show3D Lab" width={36} height={36} />
   );
 }
