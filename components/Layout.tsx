@@ -67,12 +67,6 @@ export function Header() {
               Curio 3D Lab
             </h1>
           </Link>
-          <p className="mt-0.5  items-center gap-2 text-sm text-(--ink-muted) hidden lg:flex">
-            <span className="inline-block w-2 h-2 rounded-full bg-(--success) animate-pulse"></span>
-            <span>
-              Interactive 3D Visual Library for Multi-Disciplinary Learning
-            </span>
-          </p>
         </div>
       </div>
 
