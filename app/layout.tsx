@@ -26,6 +26,10 @@ export default function RootLayout({
       <head></head>
       <body className="bg-(--bg-primary) text-(--ink-secondary) font-(--font-sans) antialiased ">
         {children}
+        <script
+          async
+          src="https://plausible.aivaded.com/api/loader/show3d.js"
+        ></script>
       </body>
     </html>
   );
