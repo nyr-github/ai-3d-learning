@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import type { Project } from "@/data";
+import { Tripo3DPromoLink } from "@/components/Tripo3DPromoLink";
 
 interface HeaderProps {
   project?: Project;
@@ -72,7 +73,7 @@ export function Header({ project }: HeaderProps) {
       </div>
 
       {/* Desktop Navigation Menu */}
-      <div className="hidden md:block">
+      <div className="hidden md:flex items-center justify-between grow gap-4">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -103,6 +104,9 @@ export function Header({ project }: HeaderProps) {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+
+        {/* Tripo3D Promo Link - Desktop */}
+        <Tripo3DPromoLink size="md" />
       </div>
 
       {/* Mobile Sidebar Menu */}
@@ -121,6 +125,11 @@ export function Header({ project }: HeaderProps) {
               </SheetTitle>
             </SheetHeader>
             {menuContent}
+
+            {/* Tripo3D Promo Link - Mobile */}
+            <div className="px-4 py-3 mt-2 border-t border-(--border-color)">
+              <Tripo3DPromoLink size="md" className="w-full justify-center" />
+            </div>
           </SheetContent>
         </Sheet>
       </div>
@@ -130,11 +139,13 @@ export function Header({ project }: HeaderProps) {
 
 export function Footer() {
   return (
-    <footer className="flex justify-center items-center px-4 py-2.5 text-xs text-(--ink-muted) ">
+    <footer className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 px-4 py-2.5 text-xs text-(--ink-muted) ">
       <span>
         © {new Date().getFullYear()} Show3D Lab · Designed for Classroom
         Teaching & Science Communication & Product Demonstration
       </span>
+      <span className="hidden sm:inline">|</span>
+      <Tripo3DPromoLink size="sm" />
     </footer>
   );
 }
