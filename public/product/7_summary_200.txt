@@ -1,0 +1,1 @@
+Traditional biology education relies on flat textbook images that fail to show the complexity of cellular structures. We built an open-source 3D learning platform where students and teachers can interactively explore biological models with detailed educational metadata - making science education more accessible and engaging for everyone.

@@ -65,7 +65,5 @@ export function CellRingIcon() {
 
 /** Brand Logo Icon */
 export function BrandLogoIcon() {
-  return (
-    <img src="/icon-192.png" alt="Show3D Lab" width={36} height={36} />
-  );
+  return <img src="/icon-192.png" alt="Show3D" width={36} height={36} />;
 }

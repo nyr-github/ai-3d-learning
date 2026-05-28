@@ -1,0 +1,13 @@
+{
+  "id": "show3d",
+  "name": "Show3D - 互动3D科学学习平台",
+  "description": "完全免费、无需注册的交互式3D科学教育平台，通过浏览器探索细胞、分子和生物结构",
+  "coreFeatures": [
+    "交互式3D生物模型探索",
+    "完整教育元数据与考试重点",
+    "完全免费开源无需注册",
+    "桌面移动端响应式设计"
+  ],
+  "appUrl": "https://show3d.aivaded.com/",
+  "iconUrl": "https://show3d.aivaded.com/icon-512.png"
+}

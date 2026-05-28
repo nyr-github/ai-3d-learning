@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Show3D Lab · Science Communication",
+  title: "Show3D · Science Communication",
   description:
     "Discover the beauty of biological entities, chemical molecules, and physical structures through interactive 3D models. Perfect for classroom teaching and self-study.",
 };

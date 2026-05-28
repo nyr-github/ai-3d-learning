@@ -1,0 +1,5 @@
+Quality science education shouldn't be locked behind expensive software or require powerful computers. We believe everyone deserves access to interactive 3D learning tools, which is why we built this completely free, open-source platform.
+
+The platform delivers professional-grade 3D biological models optimized for web browsers. Through advanced compression techniques, complex cellular structures load instantly even on slower connections. Each model is paired with carefully curated educational content: detailed descriptions explain biological significance, attribute systems provide quantitative data like size ranges, and feature highlights mark examination-critical structures.
+
+Unlike static textbook images or costly 3D software, this platform offers a middle ground - professional visualization with zero barriers to access. The extensible architecture supports multiple scientific disciplines, currently featuring comprehensive biology content with cells, organelles, biomolecules, and viruses. Built for educators, designed for learners, powered by community-driven open-source development.

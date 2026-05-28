@@ -1,0 +1,13 @@
+{
+  "id": "show3d",
+  "name": "Show3D - Interactive 3D Science Learning",
+  "description": "Completely free, no-registration interactive 3D science education platform for exploring cells, molecules, and biological structures through your browser",
+  "coreFeatures": [
+    "Interactive 3D biological model exploration",
+    "Complete educational metadata with exam focus points",
+    "Completely free and open source with no registration required",
+    "Responsive design for desktop and mobile devices"
+  ],
+  "appUrl": "https://show3d.aivaded.com/",
+  "iconUrl": "https://show3d.aivaded.com/icon-512.png"
+}

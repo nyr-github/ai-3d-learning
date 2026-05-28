@@ -59,7 +59,7 @@ export interface Entity3D {
   // Description
   description: string;
   // Fun fact
-  funFact: string;
+  funFact: string | undefined;
   // Teaching/Display focus
   teachingFocus: string | undefined;
   // Tags for categorization and filtering

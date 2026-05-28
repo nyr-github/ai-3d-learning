@@ -1,0 +1,1 @@
+Students struggle to understand 3D biological structures from 2D textbooks. We created an interactive platform where anyone can explore cells, molecules, and organisms in real-time 3D - completely free and open source.

@@ -179,3 +179,30 @@
     @apply font-sans;
   }
 }
+
+/* 3D Converter Page Styles */
+@layer utilities {
+  .converter-upload-zone {
+    @apply relative border-2 border-dashed rounded-xl p-12 text-center cursor-pointer
+           transition-all duration-300 ease-in-out;
+  }
+
+  .converter-upload-zone:hover {
+    @apply border-(--accent-primary) bg-(--bg-hover);
+  }
+
+  .converter-upload-zone.dragging {
+    @apply border-(--accent-primary) bg-(--accent-ultralight) scale-105;
+  }
+
+  .converter-progress-bar {
+    @apply h-full bg-linear-to-r from-(--accent-primary) to-(--accent-secondary)
+           transition-all duration-300 ease-out;
+  }
+
+  .converter-format-selector {
+    @apply w-full bg-(--bg-secondary) border border-(--border-primary) rounded-lg p-4
+           appearance-none cursor-pointer
+           focus:outline-none focus:ring-2 focus:ring-(--accent-primary) focus:border-transparent;
+  }
+}

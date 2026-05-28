@@ -1,0 +1,5 @@
+As a biology student, I constantly struggled to visualize complex cellular structures from flat textbook images. How do chloroplasts arrange inside a plant cell? What does a bacteriophage actually look like? These questions drove me to build a solution.
+
+This platform puts interactive 3D models directly in your browser. Explore plant and animal cells, rotate DNA double helices, examine virus structures, and zoom into mitochondria - all with smooth, intuitive controls. Every model includes rich educational context: teaching focus points highlight what's important for exams, fun facts spark curiosity, and microscope visibility guides prepare you for lab work.
+
+The platform is designed for real learning scenarios. Teachers can project it in classrooms, students can study on their phones during commutes, and self-learners can explore at their own pace. No downloads, no accounts, no paywalls - just pure, accessible science education powered by open-source technology and a passion for making learning visual and engaging.

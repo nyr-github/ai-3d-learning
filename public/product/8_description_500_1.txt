@@ -1,0 +1,5 @@
+Traditional biology education relies heavily on 2D textbook diagrams that fail to convey the three-dimensional complexity of cellular structures. Students struggle to understand spatial relationships between organelles, molecular arrangements, and anatomical features.
+
+We created an interactive 3D learning platform that transforms science education. Users can rotate, zoom, and explore detailed biological models including plant cells, animal cells, DNA structures, and viruses. Each model comes with comprehensive educational metadata: size ranges, microscope visibility information, key structural features, and fun facts that make learning engaging.
+
+Built with modern web technologies and completely open source, the platform requires no installation or registration. Teachers can use it for classroom demonstrations while students can explore at their own pace. The responsive design works seamlessly on desktop and mobile devices, making quality science education accessible to everyone, everywhere.

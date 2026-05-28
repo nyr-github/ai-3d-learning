@@ -1,0 +1,4 @@
+Title: Open Source 3D Showcase Built with Chinese AI Tools
+Description: AI image-to-3D is trending, but models stay idle. I built a complete showcase platform using Doubao, Hunyuan 3D, and Qoder. Fully open source, easy to customize for your 3D projects.
+Tags: AI 3D Generation,Open Source,3D Showcase,Chinese AI Tools,Interactive 3D
+Message: I saw people creating amazing 3D models with AI but no easy way to showcase them online. So I built this open-source platform using Doubao, Hunyuan 3D, and Qoder. Simple setup, try it out and share your feedback!

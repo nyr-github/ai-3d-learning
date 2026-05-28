@@ -1,0 +1,5 @@
+Every time I taught biology, I watched students struggle to visualize cellular structures from textbook diagrams. They memorized organelle names but couldn't picture how they fit together inside a cell. They passed exams but didn't truly understand.
+
+I realized the problem wasn't student ability - it was our teaching tools. We're trying to teach 3D concepts with 2D materials. So I decided to build a solution: an interactive platform where anyone can explore biological structures in real-time 3D, completely free.
+
+This isn't a commercial product or startup pitch. It's a personal mission to make science education more visual, more intuitive, and more accessible. If one student finally "gets it" because they could rotate a cell model instead of staring at a flat diagram, this project succeeds.

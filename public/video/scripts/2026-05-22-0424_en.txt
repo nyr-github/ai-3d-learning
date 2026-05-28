@@ -1,0 +1,61 @@
+Recently I noticed
+
+lots of projects turning images into 3D models with AI
+
+They look amazing
+
+But most models end up sitting idle on hard drives
+
+So I decided
+
+to use a complete Chinese AI toolchain
+
+to build a full online showcase solution
+
+I used Doubao to generate beautiful cell images
+
+Then Hunyuan 3D to convert them into GLB models
+
+And with Qoder
+
+I built this interactive 3D showcase website step by step
+
+Now you can open a webpage
+
+rotate a plant cell 360 degrees
+
+zoom in to see mitochondria structures
+
+explore the DNA double helix
+
+Every model is fully interactive
+
+Not just static display
+
+But also with detailed teaching notes
+
+exam focus points
+
+microscope visibility guides
+
+All the code is completely open source
+
+With simple configuration
+
+you can adapt it to your own projects
+
+Showcase your products
+
+your designs
+
+your creativity
+
+Finally
+
+I hope this tool helps you
+
+turn AI-generated 3D models
+
+into shareable online experiences
+
+and let your creations truly be seen

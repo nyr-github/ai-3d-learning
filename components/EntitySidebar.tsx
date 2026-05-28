@@ -31,7 +31,7 @@ export function EntitySidebar({ project, activeId, onSelect }: Props) {
         <header className="hidden md:flex items-center gap-2 px-4 py-3 border-b border-(--border-secondary) bg-linear-to-r from-(--bg-secondary) to-(--bg-card)">
           <List className="w-4 h-4 text-(--accent-primary)" />
           <h2 className="text-sm font-semibold text-(--ink-primary) uppercase tracking-wider">
-            {project.name}
+            {project.tabName}
           </h2>
           <span className="ml-auto text-xs font-(--font-mono) text-(--ink-muted) bg-(--bg-secondary) px-2 py-0.5 rounded">
             {project.models.length}

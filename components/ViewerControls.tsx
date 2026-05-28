@@ -94,7 +94,8 @@ export function ViewerTip() {
 }
 
 /** 3D Viewer Fun Fact Component - Educational Demo Style */
-export function ViewerFunFact({ funFact }: { funFact: string }) {
+export function ViewerFunFact({ funFact }: { funFact: string | undefined }) {
+  if (!funFact) return null;
   return (
     <div className="absolute hidden sm:block bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none  sm:max-w-[85%]">
       <div className="bg-linear-to-br from-blue-50/90 to-purple-50/90 border border-blue-200/60 px-4 py-3 rounded-2xl backdrop-blur-md shadow-lg sm:px-3 sm:py-2.5">

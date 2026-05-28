@@ -120,6 +120,9 @@ export function EntityViewer({
     scale: entity.model3D.displayScale,
   });
 
+  // Skeleton visualization state
+  const [showSkeleton, setShowSkeleton] = useState(false);
+
   const isReady = phase === "completed" && !!task?.parsedAsset;
 
   // Track previous entity to cleanup old model cache
@@ -176,7 +179,7 @@ export function EntityViewer({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full ${isFullscreen ? "bg-(--bg-primary)" : ""}`}
+      className={`relative w-full h-full ${isFullscreen ? "bg-[radial-gradient(circle,#575a5d_0%,#0e0e10_90%)]" : ""}`}
     >
       <Canvas
         shadows="percentage"
@@ -207,6 +210,7 @@ export function EntityViewer({
             autoRotate={autoRotate}
             initialRotation={entity.model3D.defaultRotation}
             displayScale={entity.model3D.displayScale}
+            showSkeleton={showSkeleton}
           />
         )}
 
@@ -245,7 +249,7 @@ export function EntityViewer({
         onToggleFullscreen={handleToggleFullscreen}
       />
       <TransformPanel transform={transform} />
-      <ModelInfoPanel entity={entity} />
+      <ModelInfoPanel entity={entity} onSkeletonHover={setShowSkeleton} />
 
       {!isReady && (
         <ProgressOverlay

@@ -9,8 +9,10 @@ export type {
 
 // Project list
 import { bioProject } from "@/data/projects/bio";
+import { charProject } from "@/data/projects/char";
 import { motorcycleProject } from "./projects/motor";
-export const projects = [bioProject, motorcycleProject];
+
+export const projects = [bioProject, motorcycleProject, charProject];
 
 // Utility functions
 export const getProjectBySlug = (slug: string) => {
