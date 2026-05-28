@@ -8,6 +8,7 @@ description: Process GLB models and images for a project, optimize them using pn
 ## Overview
 
 This skill automates the workflow of adding a new 3D model to a project:
+
 1. Optimize GLB files using `pnpm optimize:glb:models`
 2. Convert images to WebP using `pnpm convert:webp:images`
 3. Analyze output images with AI
@@ -18,6 +19,7 @@ This skill automates the workflow of adding a new 3D model to a project:
 ## Input Requirements
 
 Ask the user for:
+
 1. **Project name**: The project slug (e.g., `bio`, `char`, `moto`)
 2. **GLB file name**: The name of the GLB file in `public/models/new/` (e.g., `1.glb`)
 
@@ -26,6 +28,7 @@ Ask the user for:
 ### Step 1: Verify Input Files
 
 Check that the required files exist:
+
 - GLB file: `public/models/new/[filename].glb`
 - Image file: `public/models/new/[filename].png` (or other image format)
 
@@ -46,6 +49,7 @@ pnpm convert:webp:images
 Both scripts will save output to `public/models/new/out/` directory.
 
 **Expected output files:**
+
 - `public/models/new/out/[filename].glb` - Optimized GLB
 - `public/models/new/out/[filename].webp` - Converted WebP image
 
@@ -68,29 +72,31 @@ Read the target project file from `data/projects/[project-name].ts` to understan
 
 ```typescript
 interface Entity3D {
-  id: string;              // Unique identifier (kebab-case)
-  name: string;            // Display name
-  subtitle: string;        // Short subtitle
-  mainCategory: string;    // Main category
-  subCategory: string;     // Sub-category
-  accent: string;          // Accent color (hex)
-  description: string;     // Detailed description
+  id: string; // Unique identifier (kebab-case)
+  name: string; // Display name
+  subtitle: string; // Short subtitle
+  mainCategory: string; // Main category
+  subCategory: string; // Sub-category
+  accent: string; // Accent color (hex)
+  description: string; // Detailed description
   attributes: Attribute[]; // Key-value attributes
-  funFact: string;         // Interesting fact
-  teachingFocus: string;   // Educational focus
-  tags: string[];          // Tags for filtering
+  funFact: string; // Interesting fact
+  teachingFocus: string; // Educational focus
+  tags: string[]; // Tags for filtering
   model3D: {
-    modelUrl: string;      // "/models/[project]/[name].glb"
-    imageUrl: string;      // "/models/[project]/[name].webp"
-    fileSize: number;      // File size in bytes
-    defaultRotation: {     // Default rotation in degrees
+    modelUrl: string; // "/models/[project]/[name].glb"
+    imageUrl: string; // "/models/[project]/[name].webp"
+    fileSize: number; // File size in bytes
+    defaultRotation: {
+      // Default rotation in degrees
       x: number;
       y: number;
       z: number;
     };
-    displayScale: number;  // Scale factor
+    displayScale: number; // Scale factor
   };
-  generationPrompts?: {    // AI generation prompts
+  generationPrompts?: {
+    // AI generation prompts
     full3DPrompt?: string;
     frontPrompt?: string;
     backPrompt?: string;
@@ -99,6 +105,7 @@ interface Entity3D {
 ```
 
 Generate a new entity entry based on:
+
 - AI analysis of the image
 - Project conventions from existing entries
 - Reasonable defaults for missing data
@@ -106,6 +113,7 @@ Generate a new entity entry based on:
 ### Step 5: Move Files to Project Directory
 
 Move the optimized files:
+
 ```
 From: public/models/new/out/[filename].glb
 To:   public/models/[project]/[new-name].glb
@@ -117,6 +125,7 @@ To:   public/models/[project]/[new-name].webp
 Where `[new-name]` is the kebab-case version of the entity name (e.g., `plant-cell`).
 
 **Use file operations:**
+
 1. Read the files from `out/` directory
 2. Create files in target project directory
 3. Delete files from `out/` directory
@@ -136,6 +145,7 @@ Where `[new-name]` is the kebab-case version of the entity name (e.g., `plant-ce
 ### Step 7: Verify and Confirm
 
 Show the user:
+
 1. ✅ Files processed and moved successfully
 2. ✅ Project data structure generated
 3. 📝 Preview of the new entity entry
@@ -162,6 +172,7 @@ Show the user:
 **User**: "Add a new model to the bio project, the file is 1.glb"
 
 **You**:
+
 1. Verify files exist in `public/models/new/`
 2. Run `pnpm optimize:glb:models` and `pnpm convert:webp:images`
 3. Analyze the output WebP image

@@ -35,13 +35,15 @@ interface UseModelConverterReturn {
  * 封装文件选择、预览加载、格式转换、状态管理等核心逻辑
  */
 export function useModelConverter(
-  options: UseModelConverterOptions = {}
+  options: UseModelConverterOptions = {},
 ): UseModelConverterReturn {
   const { targetFormat, enablePreview = false } = options;
 
   // 状态管理
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [sourceFormat, setSourceFormat] = useState<SupportedFormat | null>(null);
+  const [sourceFormat, setSourceFormat] = useState<SupportedFormat | null>(
+    null,
+  );
   const [conversionState, setConversionState] = useState<ConversionState>({
     status: "idle",
     progress: 0,
@@ -109,7 +111,7 @@ export function useModelConverter(
         }
       }
     },
-    [enablePreview]
+    [enablePreview],
   );
 
   /**
@@ -143,7 +145,7 @@ export function useModelConverter(
       // 执行转换
       const result = await converterRef.current!.convert(
         selectedFile,
-        targetFormat
+        targetFormat,
       );
 
       clearInterval(progressInterval);
@@ -160,8 +162,7 @@ export function useModelConverter(
       setConversionState({
         status: "error",
         progress: 0,
-        error:
-          error instanceof Error ? error.message : "转换过程中发生错误",
+        error: error instanceof Error ? error.message : "转换过程中发生错误",
       });
     }
   }, [selectedFile, sourceFormat, targetFormat]);

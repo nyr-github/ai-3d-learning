@@ -37,7 +37,7 @@ const nextConfig = {
     // GLB Optimizer will use Meshopt compression instead
     config.resolve.alias = {
       ...config.resolve.alias,
-      'draco3dgltf': false,
+      draco3dgltf: false,
     };
 
     return config;

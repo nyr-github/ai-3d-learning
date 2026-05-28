@@ -118,10 +118,7 @@ export function ModelScene({
         }
       });
 
-      console.log(
-        `[ModelScene] Mesh sizes for ${modelName}:`,
-        meshSizes,
-      );
+      console.log(`[ModelScene] Mesh sizes for ${modelName}:`, meshSizes);
 
       // Fallback to full bounding box if no meshes found
       if (!hasMeshes) {
@@ -154,9 +151,7 @@ export function ModelScene({
     // This allows fine-tuning the final display size
     const finalScale = baseScale * displayScale;
 
-    console.log(
-      `[ModelScene] ${modelName}:`,
-    );
+    console.log(`[ModelScene] ${modelName}:`);
     console.log(`  ├─ hasSkeleton: ${hasSkeleton}`);
     console.log(`  ├─ originalSize: ${maxDim.toFixed(2)}`);
     console.log(`  ├─ baseScale: ${baseScale.toFixed(4)}`);
