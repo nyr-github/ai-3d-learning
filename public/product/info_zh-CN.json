@@ -1,13 +1,14 @@
 {
   "id": "show3d",
-  "name": "Show3D - 互动3D科学学习平台",
-  "description": "完全免费、无需注册的交互式3D科学教育平台，通过浏览器探索细胞、分子和生物结构",
+  "name": "Show3D - 交互式3D科学学习平台",
+  "description": "永久免费、无需注册的基于浏览器的3D科学教育平台，支持交互式模型查看、格式转换和优化",
   "coreFeatures": [
-    "交互式3D生物模型探索",
-    "完整教育元数据与考试重点",
-    "完全免费开源无需注册",
-    "桌面移动端响应式设计"
+    "交互式3D模型查看器 - 旋转、缩放、平移操作，好莱坞红毯展示模式",
+    "智能缓存系统 - LRU缓存和预加载，秒级模型加载",
+    "内置格式转换器 - 支持OBJ/FBX/STL等格式转换为GLB",
+    "专业模型优化器 - DRACO压缩，减少50-80%文件大小",
+    "丰富教育元数据 - 趣味知识、考点标记、显微镜可见性信息"
   ],
-  "appUrl": "https://show3d.aivaded.com/",
-  "iconUrl": "https://show3d.aivaded.com/icon-512.png"
+  "appUrl": "https://show3d.aivaded.com//",
+  "iconUrl": "https://show3d.aivaded.com//icon-512.png"
 }

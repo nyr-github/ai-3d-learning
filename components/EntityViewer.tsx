@@ -1,9 +1,12 @@
-import { Suspense, useState, useRef, useEffect } from "react";
+import { Suspense, useState, useRef, useEffect, useCallback } from "react";
+import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import type { OrbitControls as OrbitControlsType } from "three-stdlib";
 import type { Entity3D } from "@/data/types";
 import { useModel } from "@/hooks/useModel";
+import { useRedCarpetCamera } from "@/hooks/useRedCarpetCamera";
 import { ModelScene } from "@/components/ModelScene";
 import { ProgressOverlay } from "@/components/ProgressOverlay";
 import {
@@ -82,6 +85,9 @@ interface Props {
   onReset?: () => void;
   onToggleRotate?: () => void;
   onToggleFullscreen?: () => void;
+  // Red carpet callbacks for external controls
+  onRedCarpetStateChange?: (isPlaying: boolean) => void;
+  onTriggerRedCarpet?: () => void;
 }
 
 export function EntityViewer({
@@ -93,6 +99,8 @@ export function EntityViewer({
   onReset: externalOnReset,
   onToggleRotate: externalOnToggleRotate,
   onToggleFullscreen: externalOnToggleFullscreen,
+  onRedCarpetStateChange,
+  onTriggerRedCarpet: externalTriggerRedCarpet,
 }: Props) {
   const { phase, progress, task } = useModel(entity.model3D.modelUrl, {
     autoStart: true,
@@ -123,10 +131,61 @@ export function EntityViewer({
   // Skeleton visualization state
   const [showSkeleton, setShowSkeleton] = useState(false);
 
+  // Red carpet effect state
+  const [camera, setCamera] = useState<THREE.Camera | null>(null);
+  const [animationSpeed, setAnimationSpeed] = useState(1.0);
+  const [redCarpetTrigger, setRedCarpetTrigger] = useState(1); // Start at 1 to trigger on first load
+
   const isReady = phase === "completed" && !!task?.parsedAsset;
+
+  // Red carpet camera effect - must be called before any useEffect
+  const { isPlaying, startAnimation, stopAnimation } = useRedCarpetCamera({
+    controlsRef: controlsRef as React.RefObject<OrbitControlsType | null>,
+    camera,
+    enabled: isReady && redCarpetTrigger > 0, // Enable when ready and trigger is set
+    onComplete: () => {
+      setAnimationSpeed(1.0); // Restore normal animation speed
+    },
+    onAnimationSpeedChange: (speed) => {
+      setAnimationSpeed(speed);
+    },
+  });
+
+  // Function to manually trigger red carpet
+  const handleTriggerRedCarpet = useCallback(() => {
+    // If already playing, stop it first
+    if (isPlaying) {
+      stopAnimation();
+      // Wait a tick for state to update, then restart
+      setTimeout(() => {
+        startAnimation();
+        onRedCarpetStateChange?.(true);
+      }, 50);
+    } else {
+      // Not playing, just start
+      startAnimation();
+      onRedCarpetStateChange?.(true);
+    }
+  }, [isPlaying, startAnimation, stopAnimation, onRedCarpetStateChange]);
+
+  // Use external trigger if provided, otherwise use internal
+  const triggerRedCarpet = externalTriggerRedCarpet || handleTriggerRedCarpet;
+
+  // Sync isPlaying state to ref for use in other effects
+  const prevIsPlayingRef = useRef(false);
+
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+    // Only notify when state actually changes
+    if (prevIsPlayingRef.current !== isPlaying) {
+      onRedCarpetStateChange?.(isPlaying);
+      prevIsPlayingRef.current = isPlaying;
+    }
+  }, [isPlaying, onRedCarpetStateChange]);
 
   // Track previous entity to cleanup old model cache
   const prevEntityRef = useRef<Entity3D | null>(null);
+  const isPlayingRef = useRef(false);
 
   // Reset transform state and cleanup old model when switching entities
   useEffect(() => {
@@ -149,7 +208,15 @@ export function EntityViewer({
       rotationZ: degToRad(entity.model3D.defaultRotation.z),
       scale: entity.model3D.displayScale,
     });
-  }, [entity]);
+
+    // Stop any ongoing red carpet animation
+    if (isPlayingRef.current) {
+      stopAnimation();
+    }
+
+    // Trigger red carpet animation for new entity
+    setRedCarpetTrigger((prev) => prev + 1);
+  }, [entity]); // Only depend on entity, not stopAnimation
 
   // Cleanup on component unmount
   useEffect(() => {
@@ -186,6 +253,7 @@ export function EntityViewer({
         dpr={[1, 2]}
         camera={{ position: [0, 0, 4.4], fov: 45 }}
         gl={{ antialias: true, preserveDrawingBuffer: true }}
+        onCreated={(state) => setCamera(state.camera)}
       >
         <ambientLight intensity={0.55} />
         <directionalLight
@@ -204,13 +272,24 @@ export function EntityViewer({
           />
         </Suspense>
 
+        {/* Bloom post-processing - enhanced during red carpet */}
+        <EffectComposer enableNormalPass={false}>
+          <Bloom
+            luminanceThreshold={isPlaying ? 0.5 : 0.7}
+            luminanceSmoothing={0.9}
+            intensity={isPlaying ? 1.2 : 0.6}
+            mipmapBlur
+          />
+        </EffectComposer>
+
         {isReady && task?.parsedAsset && (
           <ModelScene
             gltf={task.parsedAsset}
-            autoRotate={autoRotate}
+            autoRotate={autoRotate && !isPlaying} // Disable auto-rotate during red carpet
             initialRotation={entity.model3D.defaultRotation}
             displayScale={entity.model3D.displayScale}
             showSkeleton={showSkeleton}
+            animationSpeed={animationSpeed}
           />
         )}
 
@@ -247,6 +326,8 @@ export function EntityViewer({
         onReset={handleReset}
         isFullscreen={isFullscreen}
         onToggleFullscreen={handleToggleFullscreen}
+        isRedCarpetPlaying={isPlaying}
+        onTriggerRedCarpet={triggerRedCarpet}
       />
       <TransformPanel transform={transform} />
       <ModelInfoPanel entity={entity} onSkeletonHover={setShowSkeleton} />

@@ -1,13 +1,14 @@
 {
   "id": "show3d",
-  "name": "Show3D - Interactive 3D Science Learning",
-  "description": "Completely free, no-registration interactive 3D science education platform for exploring cells, molecules, and biological structures through your browser",
+  "name": "Show3D - Interactive 3D Science Learning Platform",
+  "description": "Free, no-registration-required browser-based 3D science education platform with interactive model viewing, format conversion, and optimization",
   "coreFeatures": [
-    "Interactive 3D biological model exploration",
-    "Complete educational metadata with exam focus points",
-    "Completely free and open source with no registration required",
-    "Responsive design for desktop and mobile devices"
+    "Interactive 3D Viewer - Rotate, zoom, pan controls with Hollywood red carpet presentation mode",
+    "Intelligent Caching - LRU cache and preloading system for sub-3-second model loading",
+    "Built-in Format Converter - Convert OBJ/FBX/STL and more to optimized GLB format",
+    "Professional Model Optimizer - DRACO compression achieving 50-80% file size reduction",
+    "Rich Educational Metadata - Fun facts, test point markers, microscope visibility info"
   ],
-  "appUrl": "https://show3d.aivaded.com/",
-  "iconUrl": "https://show3d.aivaded.com/icon-512.png"
+  "appUrl": "https://show3d.aivaded.com//",
+  "iconUrl": "https://show3d.aivaded.com//icon-512.png"
 }

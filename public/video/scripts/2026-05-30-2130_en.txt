@@ -1,0 +1,145 @@
+AI-generated 3D models are exploding right now
+
+Tripo3D and Hunyuan 3D let anyone create models
+
+But they only display inside those platforms
+
+Ever thought about showcasing them on your own website
+
+Some 3D showcase sites exist online
+
+But they're either not open-source, you can't deploy them
+
+Or they only work with specific model types
+
+Want to add different categories? Can't modify the code
+
+So I wondered
+
+Why not build a truly universal open-source platform
+
+So I designed a flexible Entity3D data structure
+
+That can extend to any type of 3D model
+
+Whether biological cells, dinosaurs, insects
+
+Or anime characters, mechanical devices, architectural models
+
+Just define the data, no need to change core code
+
+Different data types automatically adapt
+
+to different display modes and interactions
+
+Biological models show knowledge points and test markers
+
+Mechanical models highlight structural details
+
+Character models emphasize style and textures
+
+Plus Hollywood red carpet slow-motion cinematic effect
+
+Models auto-rotate slowly on entrance
+
+Dramatic lighting, atmosphere maxed out
+
+Like a movie premiere
+
+Showcasing your 3D works in the most stunning way
+
+Welcome to AI 3D Learning Platform
+
+Explore the microscopic biological world
+
+chloroplast arrangement in plant cells
+
+internal structures of animal cells
+
+the DNA double helix
+
+detailed morphology of bacteriophages
+
+Then travel back to prehistoric times
+
+T-Rex teeth and muscle structure in full view
+
+triceratops horn and frill details
+
+the massive body of brachiosaurus
+
+agile posture of velociraptors
+
+Or dive into the insect world
+
+dragonfly wing venation patterns
+
+praying mantis raptorial forelegs
+
+beetle exoskeleton textures
+
+butterfly wing scale details
+
+Discover various lizard species
+
+from Komodo dragons to bearded dragons
+
+every scale and skin fold clearly visible
+
+If you love anime and gaming
+
+we have amazing character models too
+
+Luffy, Pikachu, steampunk robots
+
+mech warriors, shadow creatures
+
+You can even examine high-performance racing motorcycles
+
+the mechanical structure of ZX-820RR
+
+Every model allows
+
+360-degree free rotation
+
+zoom in to inspect details
+
+adjust viewing angles and lighting
+
+Deploying your own platform is incredibly simple
+
+Clone the open-source project
+
+Install dependencies
+
+Define your Entity3D data
+
+Drop in your GLB model files
+
+Start the service and you're done
+
+The platform features intelligent caching
+
+models load quickly and smoothly
+
+DRACO compression technology
+
+even complex models open instantly
+
+Supports static site deployment
+
+GitHub Pages, Vercel, Netlify all work
+
+Finally
+
+I hope this open-source platform helps you
+
+easily showcase AI-generated 3D works
+
+whether for personal portfolios
+
+or educational displays
+
+you can rapidly build your own 3D showcase space
+
+And extend it to any model types you need

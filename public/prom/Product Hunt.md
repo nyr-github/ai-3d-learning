@@ -1,180 +1,64 @@
-# AI 3D Learning Platform - Open Source 3D Showcase Built with Chinese AI Tools
+# AI 3D Learning Platform - Interactive 3D Education for Science
 
-## Hello! 👋
+## Hi there! 👋
 
-I'm a developer passionate about science education and AI workflows.
+I'm a developer who believes science education should be more visual and interactive. After watching students struggle to understand complex 3D structures from flat textbook diagrams, I built this platform to make learning biology, chemistry, and physics more intuitive.
 
-Recently, I noticed an interesting trend: many people are using AI to generate 3D models from images. The results are amazing, but there's a problem - **most of these models end up sitting idle on hard drives**.
+## The Problem We Faced
 
-Why? Because putting 3D models online for interactive viewing is still too difficult for most people.
+Traditional science education has some real limitations:
 
-So I decided to build a complete solution and open-source it.
-
-## The Problem We're Solving
-
-**❌ AI-generated models can't be easily shared**
-- You use AI tools to create beautiful 3D models
-- But they're stuck on your local machine
-- No simple way to let others explore them online
-
-**❌ 3D web development has a steep learning curve**
-- Need to learn Three.js, WebGL
-- Performance optimization is complex
-- Building from scratch takes weeks
-
-**❌ Educational content lacks interactive 3D**
-- Students learn biology from flat 2D images
-- Hard to understand spatial relationships of organelles
-- Textbook images don't match microscope views
+- **2D diagrams can't show 3D structures**: How do you truly understand a cell's organelles or DNA's double helix from a flat image?
+- **Static textbooks lack engagement**: Students scroll past diagrams without really exploring them
+- **Lab preparation is intimidating**: Without prior exposure to microscopic structures, students feel lost in actual lab sessions
+- **Scale is hard to grasp**: Understanding that a bacterium is 1-10μm while a neuron can be 1m long is difficult without visual context
 
 ## What I Built
 
-An **open-source 3D online showcase platform** with a complete AI workflow:
+An interactive 3D educational platform where you can freely explore scientific models with real-time rotation, zoom, and pan controls.
 
-**My AI Toolchain:**
-- 🎨 **Doubao**: Generate high-quality scientific illustrations
-- 🧊 **Hunyuan 3D**: Convert images to GLB 3D models
-- 💻 **Qoder**: AI coding assistant for rapid development
+**Key Features:**
 
-**Platform Features:**
+- **Interactive 3D Viewing**: Rotate, zoom, and examine biological entities, molecules, and physical structures from every angle
+- **Rich Educational Metadata**: Each model includes detailed descriptions, fun facts, teaching focus points, and microscope visibility info
+- **Optimized Performance**: DRACO-compressed GLB models with intelligent caching for instant loading
+- **Multi-Discipline Support**: Currently features biology (cells, organelles, viruses, molecules), with extensible architecture for chemistry and physics
+- **Responsive Design**: Works seamlessly on desktop with resizable panels and on mobile with touch-optimized controls
+- **Test Point Highlights**: Key structures marked with high-frequency exam points for students preparing for tests
 
-✨ **True 3D Interaction**
-- 360° rotation, zoom, pan
-- Not static displays - fully interactive 3D
-- Works seamlessly on desktop and mobile
+**Current Content:**
+- Plant & Animal Cells, Bacteria, White Blood Cells, Neurons
+- Mitochondria, Chloroplasts, Cell Membranes
+- DNA Double Helix
+- T4 Bacteriophage
 
-📚 **Rich Educational Metadata**
-- Detailed descriptions for each model
-- Key learning points highlighted
-- Microscope visibility guides
-- Fun facts to engage learners
+## Built With
 
-🔧 **Developer-Friendly**
-- Completely open source (MIT license)
-- Add models with simple JSON configuration
-- One-click deploy to GitHub Pages
-- Zero server cost
-
-🚀 **Performance Optimized**
-- DRACO compression: 50-80% smaller models
-- Smart caching: instant model switching
-- WebP images: faster loading
-- Responsive design: works everywhere
-
-## Current Content
-
-I've built a biology education project with 9 interactive 3D models:
-
-**Cells:**
-- 🌿 Plant Cell (Eukaryotic, Autotrophic)
-- 🐾 Animal Cell (Eukaryotic, Heterotrophic)
-- 🦠 Bacterial Cell (Prokaryotic)
-- 💉 White Blood Cell (Immune System)
-- 🧠 Neuron (Nervous System)
-
-**Organelles:**
-- ⚡ Mitochondrion (Powerhouse)
-- 🍃 Chloroplast (Photosynthesis)
-- 🧬 Cell Membrane (Fluid Mosaic Model)
-
-**Biomolecules:**
-- 🧬 DNA Double Helix (Genetic Code)
-
-**Viruses:**
-- 🔬 T4 Bacteriophage (Bacterial Virus)
-
-Every model is fully interactive with detailed educational annotations.
-
-## Tech Stack
-
-- **Frontend**: Next.js 16 (App Router + Static Export)
-- **3D Rendering**: Three.js + React Three Fiber + Drei
-- **Model Compression**: DRACO
-- **Styling**: Tailwind CSS v4
-- **Deployment**: GitHub Pages
-
-**Key Architecture:**
-
-```
-Data-Driven: Generic Entity3D model
-  → JSON configuration
-  → Automatic rendering
-
-Smart Loading: State machine + caching
-  → idle → downloading → parsing → completed
-  → Memory cache + preloading
-```
+- Next.js 16 + React 19
+- Three.js + React Three Fiber
+- DRACO compression for optimized 3D models
+- Tailwind CSS v4
+- Deployed as static site for fast loading
 
 ## Try It Out
 
-🌐 **Live Demo**: https://[your-username].github.io/ai-3d-learning
+🌐 **Live Demo**: https://[your-domain].com
 
-💻 **Local Development**:
-```bash
-git clone <repository-url>
-cd ai-3d-learning
-pnpm install
-pnpm dev
-```
-
-📝 **Add Your Own Models**:
-1. Place GLB files in `public/models/`
-2. Add preview images (WebP) to `public/images/`
-3. Configure JSON data file
-4. Run and see it instantly!
-
-## Use Cases
-
-This platform works for:
-- 📚 **Science Education**: Biology, chemistry, physics, geography
-- 🎁 **Product Showcase**: 3D product previews
-- 🎨 **Design Portfolio**: Interactive 3D works
-- 🎮 **Game Development**: Character, scene previews
-- 🛒 **E-commerce**: 3D product display
-
-Just replace the data and models - no code changes needed.
-
-## Open Source
-
-📦 **GitHub**: https://github.com/[your-username]/ai-3d-learning
-
-Code is completely open source under MIT license.
+The platform is completely open source. Feel free to explore the 3D models, check the code, or even add your own educational content.
 
 ## I'd Love Your Feedback
 
-As a developer, I really want to know:
+I'm looking for honest feedback from educators, students, and anyone interested in science education:
 
-1. **Is this AI-to-showcase workflow useful for your projects?**
-2. **What features would you like to see?**
-   - Animation support?
-   - Custom annotation tools?
-   - Multi-language support?
-   - Performance monitoring?
-3. **What type of 3D models would you showcase?**
-4. **Any issues or suggestions?**
+- Would this be useful for your teaching or learning?
+- What scientific topics should I add next? (chemistry molecules? physics structures?)
+- Did you encounter any bugs or usability issues?
+- What features would make this more valuable for education?
 
-Please try it out and share your thoughts. Your feedback is invaluable for improving this project!
-
-You can:
-- ⭐ Star the repo if you find it useful
-- 🐛 Submit issues on GitHub
-- 💬 Leave comments here
-- 🔧 Contribute via pull requests
-
-## What's Next
-
-Future plans:
-- More content templates (chemistry, physics, etc.)
-- Animation support for dynamic processes
-- Custom annotation tools
-- Multi-language support
-- Performance optimizations for larger models
-- AI-assisted metadata generation
+Thanks for your time, and I hope this makes science a bit more accessible! ✨
 
 ---
 
-**Built with Chinese AI tools, for the global community.** 🌏
-
-Thank you for your time and support! ✨
-
-#OpenSource #AI #3D #Education #ThreeJS #NextJS
+**Tech Stack**: Next.js, Three.js, React Three Fiber, TypeScript, Tailwind CSS
+**License**: MIT
+**GitHub**: https://github.com/[your-username]/ai-3d-learning

@@ -1,22 +1,21 @@
-# Free Open-Source 3D Science Education
+## Democratizing 3D Education
 
-## Our Mission
-Quality science education shouldn't be locked behind expensive software or require powerful computers. We believe everyone deserves access to interactive 3D learning tools, which is why we built this completely free, open-source platform.
+Education technology should **democratize access**, not create barriers. This platform delivers professional-grade 3D visualization **completely free** and without registration.
 
-## Professional-Grade Content
-The platform delivers optimized 3D biological models for web browsers:
-- Advanced compression techniques for instant loading
-- Complex cellular structures even on slower connections
-- Carefully curated educational content paired with each model
-- Detailed descriptions explaining biological significance
-- Quantitative data like size ranges through attribute systems
-- Feature highlights marking examination-critical structures
+### Platform Value
 
-## The Middle Ground
-Unlike static textbook images or costly 3D software, this platform offers professional visualization with zero barriers to access. The extensible architecture supports multiple scientific disciplines, currently featuring:
-- **Cells**: Plant, animal, bacterial, and specialized cells
-- **Organelles**: Mitochondria, chloroplasts, cell membranes
-- **Biomolecules**: DNA and molecular structures
-- **Viruses**: Bacteriophages and viral structures
+- **Next.js** with static site generation for lightning-fast global access
+- **Extensible architecture** supporting unlimited disciplines
+- **Unified data model** for biology, chemistry, physics, engineering
 
-Built for educators, designed for learners, powered by open-source development.
+### For Teachers
+- Highlighted test points
+- Size range sliders  
+- Attribute panels
+
+### For Students
+- Intuitive exploration experience
+- Auto-rotation and fullscreen mode
+- Instant model switching
+
+**Premium 3D education tools, open-source and accessible to all.**

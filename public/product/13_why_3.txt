@@ -1,5 +1,1 @@
-Education inequality is real. Schools in wealthy areas afford expensive 3D software and lab equipment while underfunded schools use outdated textbooks. This creates a two-tier system where resources, not ability, determine learning outcomes.
-
-We built this platform to level that playing field. By combining modern web technology with open-source values, we created professional-quality 3D educational tools accessible to anyone with a browser - no expensive software, no high-end hardware, no institutional subscriptions.
-
-Our motivation is simple: every student deserves access to quality educational resources, regardless of their zip code or family income. Technology should democratize education, not create new barriers. This platform proves that free, open-source, and high-quality can coexist.
+The gap between 3D reality and 2D educational materials creates unnecessary learning barriers. We created Show3D to eliminate those barriers completely - delivering professional-grade 3D visualization through a free, open-source, browser-based platform. No installation, no registration, no cost. Just open a URL and explore complex scientific structures interactively. Because understanding science shouldn't depend on expensive software or privileged access.

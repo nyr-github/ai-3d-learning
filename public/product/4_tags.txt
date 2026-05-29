@@ -1,20 +1,20 @@
 3D Learning
 Science Education
-Biology
 Interactive Models
+GLB Converter
+Model Optimizer
+Biology Visualization
+Chemistry 3D
+Physics Models
+Educational Platform
 Open Source
-EdTech
-Visualization
-E-Learning
-STEM Education
-WebGL
-3D学习
-科学教育
-生物
-互动模型
-开源
+3D学习平台
+科学教育工具
+交互式模型
+格式转换器
+模型优化器
+生物可视化
+化学3D模型
+物理结构
 教育科技
-可视化
-在线学习
-STEM教育
-三维展示
+开源项目

@@ -43,6 +43,9 @@ export function ProjectClient({ project }: ProjectClientProps) {
     handleToggleFullscreen,
   } = useMobileViewerControls();
 
+  // Red carpet state for mobile controls
+  const [isRedCarpetPlaying, setIsRedCarpetPlaying] = useState(false);
+
   useEffect(() => {
     // Get first entity as default selection
     const firstEntity = project.models[0];
@@ -86,6 +89,7 @@ export function ProjectClient({ project }: ProjectClientProps) {
               onToggleFullscreen={handleToggleFullscreen}
               onOpenSidebar={() => setSidebarOpen(true)}
               onOpenInfoPanel={() => setInfoPanelOpen(true)}
+              isRedCarpetPlaying={isRedCarpetPlaying}
             />
           </div>
 
@@ -104,6 +108,7 @@ export function ProjectClient({ project }: ProjectClientProps) {
               onReset={handleReset}
               onToggleRotate={handleToggleRotate}
               onToggleFullscreen={handleToggleFullscreen}
+              onRedCarpetStateChange={setIsRedCarpetPlaying}
             />
           </section>
 
@@ -131,7 +136,11 @@ export function ProjectClient({ project }: ProjectClientProps) {
                   { "--accent": activeEntity.accent } as React.CSSProperties
                 }
               >
-                <EntityViewer key={activeEntity.id} entity={activeEntity} />
+                <EntityViewer
+                  key={activeEntity.id}
+                  entity={activeEntity}
+                  onRedCarpetStateChange={setIsRedCarpetPlaying}
+                />
               </section>
             </ResizablePanel>
 

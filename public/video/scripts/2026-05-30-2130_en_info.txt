@@ -1,0 +1,4 @@
+Title: Universal 3D Model Open-Source Platform
+Description: Tripo3D and Hunyuan 3D made AI 3D generation viral, but how to showcase? Existing demos are either closed-source or only work with specific models. I open-sourced this universal platform—Entity3D structure extends to any type, auto-adapts display modes. Features red carpet slow-motion cinematic effect. Includes biology, dinosaurs, insects, anime examples.
+Tags: AI 3D,open source,3D showcase,Entity3D,red carpet effect
+Message: Online 3D showcases are either closed-source or limited to fixed types. I built a universal open-source platform with Entity3D structure that auto-adapts displays and features red carpet cinematic effect. Check out my dinosaurs, insects, and characters!

@@ -1,5 +1,5 @@
 "use client";
-import { BrandLogoIcon } from "@/components/icons";
+import { Brand3DLogo } from "@/components/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Database, Menu, X, Box } from "lucide-react";
@@ -78,7 +78,7 @@ export function Header({ project }: HeaderProps) {
   return (
     <header className="flex items-center justify-between md:justify-start gap-6 md:px-4 py-3 bg-linear-to-r from-(--bg-card) to-(--bg-secondary) ">
       <div className="flex items-center gap-2">
-        <BrandLogoIcon />
+        <Brand3DLogo />
         <div>
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <h1 className="text-2xl font-bold tracking-tight text-(--ink-primary)">

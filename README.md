@@ -1,477 +1,328 @@
-# AI 3D Learning Platform
+# Show3D - Interactive 3D Science Learning Platform
 
-An interactive 3D educational platform for exploring biological entities, chemical molecules, and physical structures. Built with Next.js, Three.js, and React Three Fiber.
+Explore science in 3D! Show3D is an interactive 3D model viewing platform designed for classroom teaching, science communication, and product demonstration.
 
-## 🌟 Features
+## 🎯 Project Overview
 
-### Interactive 3D Viewing
-- **Real-time 3D Rendering**: Explore scientific models with full rotation, zoom, and pan controls
-- **Optimized Model Loading**: Intelligent caching and preloading system for instant access
-- **DRACO Compression**: Supports compressed GLB models for faster loading
-- **Responsive Design**: Adapts seamlessly from desktop to mobile devices
+Show3D provides an immersive way to explore biological entities, chemical molecules, physical structures, and various 3D models through interactive visualization. Built with Next.js, React Three Fiber, and Three.js, it offers real-time 3D rendering with smart caching and optimization.
 
-### Educational Content
-- **Rich Metadata**: Each entity includes detailed descriptions, fun facts, and teaching focus points
-- **Key Structures**: Highlight important anatomical or molecular features with test point markers
-- **Microscope Visibility**: Information about visibility under light and electron microscopes
-- **Size Ranges**: Interactive sliders showing realistic scale with units
+## 📦 3D Model Collections
 
-### Multi-Discipline Architecture
-- **Extensible Data Model**: Generic entity system supports biology, chemistry, physics, and more
-- **Project-based Organization**: Group related models into educational projects
-- **Categorization System**: Main categories and sub-categories for easy navigation
-- **Attribute System**: Flexible key-value attributes for domain-specific data
+The platform currently hosts **6 major project categories** with **40+ high-quality 3D models**:
 
-### Modern UI/UX
-- **Resizable Panels**: Desktop layout with adjustable sidebar, viewer, and info panel
-- **Mobile-First Design**: Touch-optimized controls with slide-out drawers
-- **Academic Theme**: Clean, modern laboratory-inspired design system
-- **Accessibility**: Proper ARIA labels and keyboard navigation support
+### 🧬 Biological Entities (Bio-Models)
 
-## 🏗️ Architecture
+Explore cells, organelles, biomolecules, and viruses:
 
-### Technology Stack
+- **Plant Cell** - Complete plant cell structure with organelles
+- **Animal Cell** - Eukaryotic animal cell model
+- **Bacterial Cell** - Prokaryotic cell structure
+- **White Blood Cell** - Immune system cell
+- **Neuron** - Nerve cell with dendrites and axon
+- **Mitochondrion** - Cellular power plant
+- **Chloroplast** - Photosynthesis organelle
+- **Cell Membrane** - Phospholipid bilayer structure
+- **DNA** - Double helix molecular structure
+- **Bacteriophage** - Virus infecting bacteria
 
-**Core Framework:**
-- **Next.js 16** - React framework with App Router and static export
-- **React 19** - Latest React with concurrent features
-- **TypeScript** - Full type safety across the codebase
+### 👤 Digital Avatars (Char-Models)
 
-**3D Rendering:**
-- **Three.js** - Core 3D graphics library
-- **React Three Fiber** - React renderer for Three.js
-- **Drei** - Useful helpers for React Three Fiber (Environment, OrbitControls, etc.)
-- **DRACO** - 3D model compression for optimized loading
+Iconic anime characters, fantasy entities, and creative designs:
 
-**Styling & UI:**
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **Radix UI** - Accessible component primitives
-- **Lucide React** - Modern icon library
-- **CSS Variables** - Theme system with custom properties
+- **Donatello** - Teenage Mutant Ninja Turtles character
+- **Monkey D. Luffy** - One Piece protagonist
+- **Wood Ent** - Fantasy tree creature
+- **Shadow Stalker** - Dark fantasy entity
+- **Smiley Joy Root** - Creative character design
+- **Steampunk Robot** - Victorian-era mechanical design
+- **Mech Warrior** - Futuristic combat robot
+- **Steampunk Mechanical Bird** - Ornithopter design
+- **Pikachu** - Popular Pokémon character
 
-**Development Tools:**
-- **Sharp** - Image processing for WebP conversion
-- **glTF Transform** - 3D model optimization
-- **ESLint** - Code quality and consistency
+### 🦖 Mesozoic Legends (Paleo-Models)
 
-### Project Structure
+Scientifically accurate prehistoric dinosaur models:
 
-```
-ai-3d-learning/
-├── app/                          # Next.js App Router
-│   ├── page.tsx                  # Homepage with project overview
-│   ├── layout.tsx                # Root layout with metadata
-│   ├── globals.css               # Global styles and CSS variables
-│   └── project/[slug]/           # Dynamic route for each project
-│       ├── page.tsx              # Server component with static params
-│       └── ProjectClient.tsx     # Client component with interactive UI
-├── components/                   # React components
-│   ├── EntityViewer.tsx          # 3D canvas viewer with controls
-│   ├── EntityInfoPanel.tsx       # Entity details and attributes
-│   ├── EntitySidebar.tsx         # Model selection sidebar
-│   ├── ModelScene.tsx            # Three.js scene wrapper
-│   ├── Layout.tsx                # Header and Footer
-│   └── ui/                       # Reusable UI primitives
-├── data/                         # Content and data models
-│   ├── types.ts                  # TypeScript interfaces
-│   ├── index.ts                  # Data utilities and exports
-│   └── projects/                 # Project-specific data
-│       └── bio.ts                # Biology project entities
-├── hooks/                        # Custom React hooks
-│   └── useModel.ts               # Model loading state management
-├── lib/                          # Core utilities
-│   ├── modelLoader.ts            # Advanced model loading system
-│   └── utils.ts                  # Helper functions
-├── public/                       # Static assets
-│   ├── models/                   # 3D GLB model files
-│   ├── images/                   # Entity preview images (WebP)
-│   └── draco/                    # DRACO decoder files
-└── scripts/                      # Build and optimization scripts
-    ├── optimize-glb.ts           # GLB model optimization
-    ├── convert-images-to-webp.ts # Image conversion to WebP
-    └── update-model-sizes.ts     # Sync model file sizes
-```
+- **Brachiosaurus** - Massive long-necked herbivore
+- **Triceratops** - Three-horned ceratopsian
+- **Tyrannosaurus Rex** - Apex predator
+- **Velociraptor** - Agile pack hunter
 
-## 🔬 How It Works
+### 🪲 Micro-Monsters (Entomology-Models)
 
-### 1. Data Model System
+Hyper-realistic insect digital specimens:
 
-The platform uses a generic entity-based data model that can represent any 3D educational content:
+- **Ant** - Social insect with complex anatomy
+- **Cicada** - Periodical insect with distinctive features
+- **Dragonfly** - Ancient flying predator
+- **Firefly** - Bioluminescent beetle
+- **Grasshopper** - Jumping orthopteran
+- **Honeybee** - Essential pollinator
+- **Ladybug** - Beneficial beetle
+- **Monarch Butterfly** - Migratory lepidopteran
+- **Praying Mantis** - Ambush predator
+- **Rhinoceros Beetle** - Powerful scarab beetle
 
-```typescript
-interface Entity3D {
-  id: string;                    // Unique identifier
-  name: string;                  // Display name
-  mainCategory: string;          // Primary classification
-  subCategory: string;           // Secondary classification
-  description: string;           // Detailed description
-  funFact: string;               // Engaging trivia
-  teachingFocus: string;         // Educational objectives
-  attributes: Attribute[];       // Flexible key-value data
-  features: Feature[];           // Key structures/test points
-  model3D: Model3DMetadata;      // 3D model configuration
-}
-```
+### 🦎 The Lizard Chronicles (Saurian-Models)
 
-This design allows:
-- **Extensibility**: Add new disciplines without code changes
-- **Consistency**: Uniform data structure across all entities
-- **Rich Metadata**: Support for domain-specific attributes
+Diverse squamates and reptilian species:
 
-### 2. Model Loading Pipeline
+- **Plumed Basilisk** - Jesus Christ lizard
+- **Central Bearded Dragon** - Australian agamid
+- **Frilled Lizard** - Defensive display master
+- **Green Iguana** - Large arboreal herbivore
+- **Komodo Dragon** - Largest living lizard
 
-The custom model loader implements an optimized loading strategy:
+### 🏍️ Race Motorcycles (Moto-Models)
 
-```
-1. Request Initiation
-   ↓
-2. Check Cache (in-memory Map)
-   ↓ (cache miss)
-3. Download with Progress Tracking
-   ↓
-4. Parse GLB with DRACO Decoder
-   ↓
-5. Store in Cache
-   ↓
-6. Resolve Promise to Component
-```
+High-performance engineering designs:
 
-**Key Features:**
-- **State-driven**: Tracks phases (idle → downloading → parsing → completed)
-- **Promise-based**: Components await model readiness
-- **Intelligent Caching**: Prevents redundant downloads
-- **Preloading**: Anticipates next model user might view
+- **ZX-820RR RS** - Sport racing motorcycle
 
-### 3. 3D Rendering Architecture
-
-```
-EntityViewer (React Component)
-└── Canvas (React Three Fiber)
-    ├── Lighting Setup
-    │   ├── Ambient Light
-    │   └── Directional Lights (with shadows)
-    ├── Environment (Studio preset)
-    ├── ModelScene (GLTF content)
-    ├── ContactShadows (Ground reflection)
-    └── OrbitControls (User interaction)
-```
-
-**Optimization Strategies:**
-- **Adaptive DPR**: `[1, 2]` for retina displays
-- **Shadow Maps**: 1024x1024 for balance of quality/performance
-- **Environment Maps**: Studio lighting for realistic materials
-- **Lazy Loading**: Suspense boundaries for async content
-
-### 4. Responsive Layout System
-
-**Desktop (>640px):**
-```
-┌─────────────────────────────────────────┐
-│              Header                      │
-├──────────┬──────────────┬───────────────┤
-│ Sidebar  │   3D Viewer  │  Info Panel   │
-│  (20%)   │   (55%)      │    (25%)      │
-│Resizable │  Resizable   │  Resizable    │
-├──────────┴──────────────┴───────────────┤
-│              Footer                      │
-└─────────────────────────────────────────┘
-```
-
-**Mobile (<640px):**
-```
-┌──────────────────────┐
-│    Header            │
-├──────────────────────┤
-│ [Menu] [Info]        │ ← Control buttons
-├──────────────────────┤
-│                      │
-│   3D Viewer (Full)   │
-│                      │
-├──────────────────────┤
-│    Footer            │
-└──────────────────────┘
-     ↓ Swipe/Tap
-┌──────────────┐
-│  Sidebar     │ ← Slide-out drawer
-│  (Overlay)   │
-└──────────────┘
-```
-
-### 5. Static Site Generation
-
-The platform uses Next.js static export for GitHub Pages deployment:
-
-```typescript
-// Generate all project routes at build time
-export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-```
-
-**Benefits:**
-- **Zero Server Required**: Pure static HTML/CSS/JS
-- **Fast Loading**: Pre-rendered pages
-- **CDN Ready**: Deploy anywhere (GitHub Pages, Vercel, Netlify)
-- **SEO Friendly**: Server-rendered metadata
-
-## 🚀 Getting Started
+## 🚀 Deployment Guide
 
 ### Prerequisites
 
-- **Node.js** 20+ 
-- **pnpm** 10+ (or npm/yarn)
+- **Node.js** 22.x or higher
+- **pnpm** 10.x (recommended) or npm/yarn
 
-### Installation
+### Local Development
 
-```bash
-# Clone the repository
-git clone <repository-url>
-cd ai-3d-learning
+1. **Clone the repository**
 
-# Install dependencies
-pnpm install
+   ```bash
+   git clone <repository-url>
+   cd ai-3d-learning
+   ```
 
-# Start development server
-pnpm dev
-```
+2. **Install dependencies**
 
-The application will be available at `http://localhost:3000`
+   ```bash
+   pnpm install
+   ```
 
-### Build for Production
+3. **Start development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Open browser**
+   Navigate to `http://localhost:3000`
+
+### Production Build
+
+#### Option 1: Static Site Export (Recommended for GitHub Pages)
 
 ```bash
 # Build static site
 pnpm build
 
-# Preview production build
+# The output will be in the ./out directory
+# Deploy the contents of ./out to your static hosting
+```
+
+#### Option 2: Node.js Server
+
+```bash
+# Build the application
+pnpm build
+
+# Start production server
 pnpm start
 ```
 
-Static files are generated in the `out/` directory.
+The server will run on `http://localhost:3000` by default.
+
+### GitHub Pages Deployment
+
+This project includes automated GitHub Pages deployment via GitHub Actions:
+
+1. **Push to master branch**
+
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin master
+   ```
+
+2. **Automatic deployment**
+   - The `.github/workflows/nextjs.yml` workflow will trigger automatically
+   - It builds the static site and deploys to GitHub Pages
+   - Your site will be available at `https://<username>.github.io/<repository-name>`
+
+3. **Manual trigger**
+   - Go to your repository → Actions → "Deploy Next.js site to Pages"
+   - Click "Run workflow" to trigger deployment manually
+
+### Deployment to Other Platforms
+
+#### Vercel
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+#### Netlify
+
+```bash
+# Install Netlify CLI
+npm i -g netlify-cli
+
+# Build and deploy
+pnpm build
+netlify deploy --prod --dir=out
+```
+
+#### Docker (Optional)
+
+```dockerfile
+FROM node:22-alpine
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN npm i -g pnpm && pnpm install --frozen-lockfile
+COPY . .
+RUN pnpm build
+EXPOSE 3000
+CMD ["pnpm", "start"]
+```
 
 ## 🛠️ Development Scripts
 
-### Model Optimization
+### Model Processing & Analysis
 
 ```bash
-# Optimize all GLB models
-pnpm optimize:glb ./public/models
+# Analyze GLB model metadata
+pnpm analyze:glb
 
-# Optimize with custom output directory
-pnpm optimize:glb ./public/models ./public/models-optimized
-```
+# Analyze all models in public/models
+pnpm analyze:glb:models
 
-Uses glTF Transform to:
-- Compress textures to WebP
-- Apply DRACO mesh compression
-- Reduce file sizes by 50-80%
+# Analyze animations in models
+pnpm analyze:animations
 
-### Image Conversion
+# Optimize GLB models (compression)
+pnpm optimize:glb
 
-```bash
-# Convert images to WebP
-pnpm convert:webp ./public/images
-```
+# Convert images to WebP format
+pnpm convert:webp
 
-Converts PNG/JPG to optimized WebP format with:
-- Max width: 400px
-- Quality: 80%
-- Maintains aspect ratio
-
-### Update Model Metadata
-
-```bash
-# Sync file sizes in data models
+# Update model size metadata
 pnpm update:model-sizes
 ```
 
-Automatically updates `fileSize` fields in model definitions based on actual GLB file sizes.
-
-## 📦 Adding New Content
-
-### 1. Create Entity Data
-
-Add new entities in `data/projects/<project>.ts`:
-
-```typescript
-{
-  id: "my-entity",
-  name: "My Entity",
-  subtitle: "Description",
-  mainCategory: "Category",
-  subCategory: "Subcategory",
-  accent: "#hexcolor",
-  description: "Detailed explanation...",
-  funFact: "Interesting fact!",
-  teachingFocus: "Learning objective...",
-  attributes: [
-    { name: "Size Range", value: "10-100", unit: "μm" },
-    // ... more attributes
-  ],
-  features: [
-    { name: "Feature 1", detail: "Description", isHighFreqTestPoint: true },
-    // ... more features
-  ],
-  whereItOccurs: {
-    text: "Where to find it...",
-    habitat: "Habitat info..."
-  },
-  model3D: {
-    modelUrl: asset("models/my-entity.glb"),
-    imageUrl: asset("images/my-entity.webp"),
-    fileSize: 1234567,
-    defaultRotationY: -Math.PI / 4,
-    displayScale: 1.4,
-  }
-}
-```
-
-### 2. Add 3D Model
-
-Place your GLB file in `public/models/`:
-```bash
-cp my-entity.glb public/models/
-```
-
-**Optimization recommended:**
-```bash
-pnpm optimize:glb ./public/models
-```
-
-### 3. Add Preview Image
-
-Place WebP image in `public/images/`:
-```bash
-cp my-entity.webp public/images/
-```
-
-**Or convert from PNG/JPG:**
-```bash
-pnpm convert:webp ./public/images
-```
-
-### 4. Update File Sizes
+### Standard Scripts
 
 ```bash
-pnpm update:model-sizes
-```
-
-### 5. Test Locally
-
-```bash
+# Development mode with hot reload
 pnpm dev
+
+# Production build
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run ESLint
+pnpm lint
 ```
 
-Navigate to `http://localhost:3000/project/<project-slug>` to see your new entity.
+## 🏗️ Tech Stack
 
-## 🌐 Deployment
+### Frontend Framework
 
-### GitHub Pages
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI component library
+- **TypeScript** - Type-safe JavaScript
 
-The project includes a complete GitHub Actions workflow:
+### 3D Rendering
 
-```yaml
-# .github/workflows/deploy.yml
-# Automatically deploys on push to main branch
+- **Three.js 0.184** - 3D graphics library
+- **@react-three/fiber 9** - React renderer for Three.js
+- **@react-three/drei 10** - Useful helpers for React Three Fiber
+- **@react-three/postprocessing** - Post-processing effects
+
+### Model Processing
+
+- **@gltf-transform** - GLB optimization and transformation
+- **draco3dgltf** - Draco compression support
+- **meshoptimizer** - Mesh optimization library
+- **three-stdlib** - Three.js utilities and loaders
+
+### UI & Styling
+
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Radix UI** - Accessible component primitives
+- **shadcn/ui** - Beautiful component library
+- **Lucide React** - Modern icon library
+- **GSAP** - Animation library
+
+### Development Tools
+
+- **ESLint** - Code linting
+- **Playwright** - End-to-end testing
+- **Sharp** - Image processing
+
+## 📁 Project Structure
+
+```
+ai-3d-learning/
+├── app/                      # Next.js App Router
+│   ├── page.tsx             # Homepage
+│   ├── project/[slug]/      # Dynamic project pages
+│   ├── viewer/              # 3D GLB Viewer
+│   ├── converter/           # 3D format converter
+│   └── optimize/            # GLB optimizer
+├── components/              # React components
+│   ├── ui/                  # shadcn/ui components
+│   ├── converter/           # Converter UI components
+│   ├── icons/               # Icon components
+│   └── ...                  # Feature components
+├── data/                    # Project data & metadata
+│   ├── projects/            # Individual project definitions
+│   │   ├── bio/             # Biological models
+│   │   ├── char/            # Character models
+│   │   ├── dinosaur/        # Dinosaur models
+│   │   ├── insect/          # Insect models
+│   │   ├── lizard/          # Lizard models
+│   │   └── motor/           # Motorcycle models
+│   ├── index.ts             # Data exports
+│   └── types.ts             # TypeScript definitions
+├── lib/                     # Utilities & helpers
+├── hooks/                   # Custom React hooks
+├── public/                  # Static assets
+│   ├── models/              # 3D GLB model files
+│   ├── hdr/                 # HDR environment maps
+│   └── draco/               # Draco decoder
+├── scripts/                 # Processing scripts
+└── .github/workflows/       # CI/CD configuration
 ```
 
-**Setup:**
-1. Push to `main` branch
-2. GitHub Actions builds and deploys
-3. Site available at `https://<username>.github.io/<repo>`
+## ✨ Key Features
 
-### Other Platforms
+- **Interactive 3D Viewing** - Rotate, zoom, and explore every detail in real-time
+- **Smart Loading** - Intelligent caching and preloading for instant access
+- **Multi-Discipline Support** - Biology, paleontology, entomology, engineering, and more
+- **Red Carpet Mode** - Cinematic slow rotation showcase
+- **Model Information Panel** - Detailed metadata and attributes
+- **Entity Explorer** - Browse and select individual models
+- **GLB Optimizer** - Compress and optimize 3D models
+- **Format Converter** - Convert between 3D file formats
+- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Offline Support** - PWA capabilities for offline viewing
 
-Since it's a static site, you can deploy to:
-- **Vercel**: `vercel --prod`
-- **Netlify**: Drag & drop `out/` folder
-- **AWS S3**: Upload `out/` to S3 bucket
-- **Any CDN**: Serve static files
+## 📄 License
 
-## 🎓 Educational Use Cases
-
-### For Teachers
-- **Visual Demonstrations**: Show complex 3D structures in class
-- **Self-Study Resource**: Students can explore at their own pace
-- **Test Preparation**: High-frequency test points highlighted
-- **Comparative Learning**: Side-by-side model comparisons
-
-### For Students
-- **Interactive Exploration**: Rotate, zoom, and examine every detail
-- **Contextual Learning**: Fun facts and real-world applications
-- **Microscope Prep**: Know what to expect before lab sessions
-- **Scale Understanding**: Size ranges with visual sliders
-
-### For Content Creators
-- **Extensible Platform**: Add your own 3D models and data
-- **Multi-Discipline**: Support any scientific field
-- **AI-Generated Models**: Includes prompts for AI 3D generation
-- **Open Architecture**: Modify and customize freely
-
-## 📊 Current Content
-
-### Biology Project (`/project/bio`)
-
-**Cells:**
-- Plant Cell (Eukaryotic, Autotrophic)
-- Animal Cell (Eukaryotic, Heterotrophic)
-- Bacterial Cell (Prokaryotic)
-- White Blood Cell (Immune System)
-- Neuron (Nervous System)
-
-**Organelles:**
-- Mitochondrion (Powerhouse)
-- Chloroplast (Photosynthesis)
-- Cell Membrane (Fluid Mosaic Model)
-
-**Biomolecules:**
-- DNA Double Helix (Genetic Code)
-
-**Viruses:**
-- T4 Bacteriophage (Bacterial Virus)
-
-## 🔧 Troubleshooting
-
-### Models Not Loading
-- Check GLB files exist in `public/models/`
-- Verify file sizes match in data definitions
-- Run `pnpm update:model-sizes` to sync
-
-### Build Fails
-- Ensure all TypeScript types are correct
-- Check that `generateStaticParams` returns valid slugs
-- Clear `.next/` cache: `rm -rf .next`
-
-### Performance Issues
-- Optimize GLB files: `pnpm optimize:glb`
-- Convert images to WebP: `pnpm convert:webp`
-- Check browser console for Three.js warnings
+© 2026 Show3D · Designed for Classroom Teaching & Science Communication & Product Demonstration
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+## 📞 Support
 
-## 📝 License
-
-This project is open source and available under the MIT License.
-
-## 🙏 Acknowledgments
-
-- **Three.js** community for amazing 3D web tools
-- **React Three Fiber** for seamless React integration
-- **Next.js** team for the excellent framework
-- **Educators** who inspired this platform
-
----
-
-Built with ❤️ for science education
-
-**Explore. Learn. Discover.**
+For questions, issues, or feature requests, please open an issue in the repository.

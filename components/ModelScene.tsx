@@ -23,6 +23,8 @@ interface Props {
   }) => void;
   /** Optional custom scene (for FBX and other non-GLTF formats) */
   customScene?: THREE.Group | THREE.Scene;
+  /** Animation playback speed (1.0 = normal, 0.05 = slow motion) */
+  animationSpeed?: number;
 }
 
 /**
@@ -43,9 +45,11 @@ export function ModelScene({
   showSkeleton = false,
   onTransformChange,
   customScene,
+  animationSpeed = 1.0,
 }: Props) {
   const groupRef = useRef<THREE.Group>(null);
   const sceneRef = useRef<THREE.Group | null>(null);
+  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
   const { centeredScene, scale } = useMemo(() => {
     // Use customScene if provided (for FBX/OBJ), otherwise create from gltf
@@ -165,6 +169,30 @@ export function ModelScene({
     };
   }, [customScene, gltf, displayScale]);
 
+  // Initialize AnimationMixer if model has animations
+  useEffect(() => {
+    if (!centeredScene || !gltf.animations || gltf.animations.length === 0) {
+      return;
+    }
+
+    // Create mixer and play all animations
+    const mixer = new THREE.AnimationMixer(centeredScene);
+    mixerRef.current = mixer;
+
+    gltf.animations.forEach((clip) => {
+      mixer.clipAction(clip).play();
+    });
+
+    console.log(
+      `[ModelScene] AnimationMixer initialized with ${gltf.animations.length} animation(s)`,
+    );
+
+    return () => {
+      mixer.stopAllAction();
+      mixerRef.current = null;
+    };
+  }, [centeredScene, gltf.animations]);
+
   // Cleanup scene when component unmounts or gltf/customScene changes
   useEffect(() => {
     return () => {
@@ -204,6 +232,11 @@ export function ModelScene({
   useFrame((state, delta) => {
     if (autoRotate && groupRef.current) {
       groupRef.current.rotation.y += delta * 0.25;
+    }
+
+    // Update animation mixer with speed control
+    if (mixerRef.current) {
+      mixerRef.current.update(delta * animationSpeed);
     }
   });
 

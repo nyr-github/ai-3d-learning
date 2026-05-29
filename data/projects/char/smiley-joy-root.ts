@@ -40,7 +40,7 @@ export const smileyJoyRoot: Entity3D = {
   model3D: {
     modelUrl: "/models/char/smiley-joy-root.glb",
     imageUrl: "/models/char/smiley-joy-root.webp",
-    fileSize: 3450000,
+    fileSize: 2512176,
     defaultRotation: { x: 0, y: 0, z: 0 },
     displayScale: 2,
   },

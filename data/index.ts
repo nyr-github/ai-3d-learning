@@ -11,8 +11,19 @@ export type {
 import { bioProject } from "@/data/projects/bio";
 import { charProject } from "@/data/projects/char";
 import { motorcycleProject } from "./projects/motor";
+import { lizardProject } from "./projects/lizard";
+import { insectProject } from "./projects/insect";
+import { dinosaurProject } from "./projects/dinosaur";
 
-export const projects = [bioProject, motorcycleProject, charProject];
+
+export const projects = [
+  bioProject,
+  motorcycleProject,
+  charProject,
+  lizardProject,
+  insectProject ,
+  dinosaurProject
+];
 
 // Utility functions
 export const getProjectBySlug = (slug: string) => {

@@ -10,6 +10,7 @@ import {
   Menu,
   Info,
   Component,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
@@ -22,6 +23,8 @@ interface MobileViewerControlsProps {
   onToggleFullscreen?: () => void;
   onOpenSidebar: () => void;
   onOpenInfoPanel: () => void;
+  isRedCarpetPlaying?: boolean;
+  onTriggerRedCarpet?: () => void;
 }
 
 /** Mobile Viewer Controls Component */
@@ -33,6 +36,8 @@ export function MobileViewerControls({
   onToggleFullscreen,
   onOpenSidebar,
   onOpenInfoPanel,
+  isRedCarpetPlaying = false,
+  onTriggerRedCarpet,
 }: MobileViewerControlsProps) {
   return (
     <div className="flex items-center justify-between gap-2 mb-2">
@@ -78,6 +83,25 @@ export function MobileViewerControls({
           <span className="text-xs">Auto Rotate</span>
         </Button>
 
+        {/* Red carpet button */}
+        <Button
+          variant={isRedCarpetPlaying ? "default" : "outline"}
+          size="sm"
+          onClick={onTriggerRedCarpet}
+          disabled={isRedCarpetPlaying}
+          aria-label="Trigger red carpet effect"
+          className={`gap-1.5 ${
+            isRedCarpetPlaying
+              ? "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600"
+              : ""
+          }`}
+        >
+          <Star className="w-3.5 h-3.5" />
+          <span className="text-xs">
+            {isRedCarpetPlaying ? "Playing..." : "Red Carpet"}
+          </span>
+        </Button>
+
         {/* Reset button */}
         <Button
           variant="outline"
@@ -109,6 +133,9 @@ export function useMobileViewerControls() {
   const [autoRotate, setAutoRotate] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Expose controlsRef for use in other components
+  const getControlsRef = () => controlsRef;
 
   const handleReset = () => {
     const controls = controlsRef.current;
@@ -163,5 +190,6 @@ export function useMobileViewerControls() {
     handleReset,
     handleToggleRotate,
     handleToggleFullscreen,
+    getControlsRef,
   };
 }

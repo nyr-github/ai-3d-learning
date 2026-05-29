@@ -1,5 +1,5 @@
 url: https://show3d.aivaded.com/
-opensource: https://github.com/aivaded/ai-3d-learning
-email: contact@aivaded.com
-twitter: https://twitter.com/aivaded
-video: 
+opensource: https://github.com/nyr-github/ai-3d-learning
+email: contact@yourdomain.com
+twitter: @yourtwitter
+video: https://www.youtube.com/watch?v=your-video-id

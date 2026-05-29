@@ -1,107 +1,54 @@
-# Democratizing Science Education Through Open-Source 3D Technology
+## Democratizing Premium 3D Education Technology
 
-## The Accessibility Crisis in Science Education
+Education technology should **democratize access, not create barriers**. Too often, powerful visualization tools are locked behind expensive licenses or complex software installations. We believe every student, teacher, and self-learner deserves access to professional-grade 3D educational content - completely free.
 
-Quality science education has become a privilege rather than a right. Schools in wealthy districts afford expensive 3D modeling software and laboratory equipment while underfunded schools struggle with outdated textbooks. University students pay hundreds of dollars for access codes to digital learning platforms. Private tutoring costs put personalized science education out of reach for most families.
+### Our Mission & Value Proposition
 
-This accessibility gap creates a two-tier education system: students with resources get interactive, visual, engaging science education; students without resources get static diagrams and memorization exercises. Both groups take the same exams, but they don't start from the same place.
+This platform delivers what typically costs thousands in commercial software:
 
-## Our Mission: Free 3D Science Education for Everyone
+**For Educational Institutions:**
+- Zero licensing costs - fully open-source under MIT License
+- No server infrastructure needed - runs as static site on any CDN
+- No user accounts or authentication - instant access for all students
+- Multi-discipline extensibility - one platform for biology, chemistry, physics, engineering
+- Rich metadata system - educators can add custom attributes, test points, and learning objectives
 
-We built this platform to level the playing field. A student in a rural village with a basic smartphone should have access to the same quality 3D educational resources as a student at an elite private school with a laptop. That's not just idealistic - it's achievable with modern web technology and open-source development.
+**For Teachers & Educators:**
+- Pre-built content library with scientifically accurate 3D models
+- Highlighted test points marking high-frequency exam topics
+- Comparative learning - easily switch between related models (e.g., plant vs. animal cells)
+- Visual demonstrations ready for classroom projection
+- Self-study resource students can access anytime, anywhere
+- Microscope preparation tools showing expected visibility at different magnifications
 
-## What We've Built
+**For Students & Self-Learners:**
+- Intuitive point-and-click interface requiring no technical expertise
+- Interactive exploration at your own pace - rotate, zoom, examine every detail
+- Contextual learning with fun facts and real-world applications
+- Scale understanding through size range visualizations
+- Engaging presentation modes including Hollywood-style red carpet rotation
+- Mobile-optimized for learning on any device
 
-**A Comprehensive 3D Learning Platform** featuring:
+**For Developers & Content Creators:**
+- Extensible Entity3D data model supporting any scientific discipline
+- TypeScript type safety across the entire codebase
+- Modular architecture with clear separation of concerns
+- AI integration ready - includes 3D generation prompts for AI model creation
+- Comprehensive build scripts for model optimization and asset processing
+- Well-documented codebase with contribution guidelines
 
-### Extensive Biological Content Library
-Currently featuring detailed interactive models across multiple categories:
+### Technical Excellence Meets Educational Impact
 
-**Cellular Biology**
-- Plant cells with visible cell walls, chloroplasts, and large central vacuoles
-- Animal cells demonstrating flexible membrane structures and diverse organelles
-- Bacterial cells showing prokaryotic organization
-- Specialized cells including neurons with branching dendrites and white blood cells with immune functions
+Built on **Next.js 16** with React 19 and Three.js, the platform represents cutting-edge web technology applied to real educational challenges. The static site generation approach means deployment is trivial - push to GitHub and your global CDN handles the rest.
 
-**Subcellular Structures**
-- Mitochondria with detailed inner membrane cristae
-- Chloroplasts with thylakoid membrane systems
-- Cell membranes illustrating the fluid mosaic model
+The unified data architecture means adding new content is straightforward:
+1. Add entity metadata in TypeScript files
+2. Place optimized GLB models in public directory
+3. Run automated size sync script
+4. Deploy - that's it
 
-**Molecular Biology**
-- DNA double helix with visible base pairing
-- Molecular structures at appropriate relative scales
+### The Bottom Line
 
-**Virology**
-- T4 bacteriophage with complex tail fiber and capsid structures
+We're proving that premium educational technology doesn't require premium prices. By combining open-source philosophy with modern web capabilities, we've created a platform that serves teachers, empowers students, and scales infinitely - all while remaining completely free and accessible to anyone with a browser.
 
-### Rich Educational Metadata
-Each model includes:
-- Comprehensive descriptions explaining biological function and significance
-- Quantitative attributes (size ranges with proper units)
-- Microscope visibility information for laboratory preparation
-- Key structural features marked as examination-critical test points
-- Engaging fun facts that contextualize learning
-- Teaching focus points for comparative analysis
-
-### Universal Accessibility
-- **Zero cost**: Completely free, forever - no premium tiers, no hidden fees
-- **Zero barriers**: No registration, no downloads, no installations required
-- **Zero tracking**: Privacy-respecting with minimal analytics
-- **Zero requirements**: Works on any modern browser, any device
-- **Zero lock-in**: Open source code anyone can examine, modify, or contribute to
-
-## Technical Innovation Serving Educational Mission
-
-The platform demonstrates that advanced technology can serve accessibility goals:
-
-**Performance Optimization**: DRACO compression reduces 3D model file sizes by 50-80%, enabling fast loading even on slow internet connections common in developing regions.
-
-**Intelligent Architecture**: Custom model loading system with caching prevents redundant downloads, crucial for users with limited data plans.
-
-**Responsive Design**: Seamlessly adapts from desktop multi-panel layouts (optimal for classroom projection) to mobile touch interfaces (enabling learning anywhere).
-
-**Static Deployment**: No server infrastructure required, enabling deployment on free hosting platforms and content delivery networks worldwide.
-
-## Beyond Biology: An Extensible Platform
-
-While the current content focuses on biology education, the platform's architecture supports any scientific discipline requiring 3D visualization:
-- Chemistry: Molecular structures, chemical bonding, reaction mechanisms
-- Physics: Electromagnetic fields, quantum mechanical models, mechanical systems
-- Geology: Crystal structures, geological formations, plate tectonics
-- Anatomy: Organ systems, skeletal structures, physiological processes
-
-The generic entity-based data model means educators can add content for any discipline without modifying core platform code.
-
-## Real-World Educational Applications
-
-**Classroom Teaching**: Project interactive 3D models during lectures. Rotate structures to show different perspectives. Zoom to highlight specific features. Compare multiple models side-by-side.
-
-**Laboratory Preparation**: Students review microscope visibility information before lab sessions, knowing exactly what structures they should observe and at what magnification.
-
-**Exam Preparation**: Highlighted test points and teaching focus areas help students identify high-priority concepts for examination success.
-
-**Self-Directed Learning**: Students explore models at their own pace, reading detailed descriptions and fun facts that make science engaging rather than intimidating.
-
-**Remote Education**: Students learning from home access the same quality 3D visualization tools as classroom students, reducing educational disruption.
-
-## Open Source Means Community Ownership
-
-By making the platform completely open source, we ensure:
-- **Transparency**: Anyone can verify scientific accuracy of content
-- **Customization**: Educators adapt content for specific curricula or regional needs
-- **Contribution**: Scientists, teachers, and developers improve the platform together
-- **Sustainability**: Community-driven development prevents single points of failure
-- **Trust**: No hidden data collection, no surprise policy changes, no future paywalls
-
-## The Impact We're Creating
-
-Every student who finally understands cellular structure through 3D visualization. Every teacher who can demonstrate complex concepts interactively. Every self-learner who discovers the beauty of molecular biology. Every underfunded school that now has access to resources matching wealthy institutions.
-
-This isn't just a technology project - it's an educational equity initiative. We're proving that with thoughtful design, modern technology, and open-source values, we can make quality science education universally accessible.
-
-## Join the Mission
-
-Whether you're an educator contributing content, a developer improving the platform, or simply a student exploring 3D models - you're part of a movement making science education free, visual, interactive, and accessible to everyone, everywhere.
-
-Because understanding how life works shouldn't depend on where you were born or what resources your school has. It should depend only on your curiosity and willingness to learn.
+**Science education, reimagined for the 3D era.**

@@ -1,1 +1,1 @@
-Students struggle to understand 3D biological structures from 2D textbooks. We created an interactive platform where anyone can explore cells, molecules, and organisms in real-time 3D - completely free and open source.
+Science education needs better visualization. Students struggle with abstract 3D concepts from 2D textbooks. We built an interactive platform where biology, chemistry, and physics come alive through real-time 3D models anyone can explore freely.

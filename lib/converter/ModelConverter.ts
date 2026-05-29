@@ -360,30 +360,117 @@ export class ModelConverter {
   private async exportGLB(scene: THREE.Scene): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const exporter = new GLTFExporter();
+
+      // 预处理场景：标记可能问题的纹理
+      const processedScene = this.preprocessSceneForExport(scene);
+
       exporter.parse(
-        scene,
+        processedScene,
         (result: any) => {
           const blob = new Blob([result], { type: "application/octet-stream" });
           resolve(blob);
         },
-        (error) => reject(error),
-        { binary: true },
+        (error) => {
+          console.error("GLB export error:", error);
+          reject(error);
+        },
+        {
+          binary: true,
+          // 忽略某些不兼容的纹理
+          truncateDrawRange: true,
+          // 强制压缩纹理
+          maxTextureSize: Infinity,
+        },
       );
     });
+  }
+
+  /**
+   * 预处理场景以解决导出兼容性问题
+   * 处理 FBX 等格式中可能导致 GLTFExporter 失败的纹理
+   * 采用激进方案：清除所有纹理，只保留材质基础颜色
+   */
+  private preprocessSceneForExport(scene: THREE.Scene): THREE.Scene {
+    const processedScene = scene.clone();
+
+    processedScene.traverse((object) => {
+      if ((object as THREE.Mesh).material) {
+        const material = (object as THREE.Mesh).material as THREE.Material;
+        const materials = Array.isArray(material) ? material : [material];
+
+        materials.forEach((mat, matIndex) => {
+          const standardMat = mat as THREE.MeshStandardMaterial;
+
+          // 创建新的标准材质，只保留基础属性，清除所有纹理
+          const newMat = new THREE.MeshStandardMaterial({
+            color: standardMat.color ? standardMat.color.clone() : 0x888888,
+            metalness:
+              standardMat.metalness !== undefined ? standardMat.metalness : 0.3,
+            roughness:
+              standardMat.roughness !== undefined ? standardMat.roughness : 0.4,
+            transparent: standardMat.transparent || false,
+            opacity:
+              standardMat.opacity !== undefined ? standardMat.opacity : 1.0,
+            side: standardMat.side || THREE.FrontSide,
+          });
+
+          // 替换材质
+          const mesh = object as THREE.Mesh;
+          if (Array.isArray(mesh.material)) {
+            mesh.material[matIndex] = newMat;
+          } else {
+            mesh.material = newMat;
+          }
+
+          // 清理旧材质及其纹理
+          if (mat !== newMat) {
+            // 清理旧材质的所有纹理引用
+            const textureProps = [
+              "map",
+              "normalMap",
+              "roughnessMap",
+              "metalnessMap",
+              "emissiveMap",
+              "aoMap",
+              "lightMap",
+              "alphaMap",
+            ];
+            textureProps.forEach((prop) => {
+              const tex = (standardMat as any)[prop];
+              if (tex && tex.dispose) tex.dispose();
+            });
+            mat.dispose();
+          }
+        });
+      }
+    });
+
+    return processedScene;
   }
 
   private async exportGLTF(scene: THREE.Scene): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const exporter = new GLTFExporter();
+
+      // 使用相同的预处理逻辑
+      const processedScene = this.preprocessSceneForExport(scene);
+
       exporter.parse(
-        scene,
+        processedScene,
         (result: any) => {
           const jsonStr = JSON.stringify(result, null, 2);
           const blob = new Blob([jsonStr], { type: "application/json" });
           resolve(blob);
         },
-        (error) => reject(error),
-        { binary: false },
+        (error) => {
+          console.error("GLTF export error:", error);
+          reject(error);
+        },
+        {
+          binary: false,
+          truncateDrawRange: true,
+          maxTextureSize: Infinity,
+        },
       );
     });
   }

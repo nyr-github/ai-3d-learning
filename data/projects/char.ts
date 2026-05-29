@@ -4,6 +4,10 @@ import { monkeyDLuffy } from "./char/monkey-d-luffy";
 import { woodEnt } from "./char/wood-ent";
 import { shadowStalker } from "./char/shadow-stalker";
 import { smileyJoyRoot } from "./char/smiley-joy-root";
+import { steampunkRobot } from "./char/steampunk-robot";
+import { mechWarrior } from "./char/mech-warrior";
+import { steampunkMechanicalBird } from "./char/steampunk-mechanical-bird";
+import { pikachu } from "./char/pikachu";
 
 export const charProject: Project = {
   name: "Digital Avatars",
@@ -12,5 +16,15 @@ export const charProject: Project = {
   description:
     "Explore iconic anime characters, fantasy entities, and eldritch creatures in immersive 3D",
   tabName: "Char-Models",
-  models: [donatello, monkeyDLuffy, woodEnt, shadowStalker, smileyJoyRoot],
+  models: [
+    donatello,
+    monkeyDLuffy,
+    woodEnt,
+    shadowStalker,
+    smileyJoyRoot,
+    steampunkRobot,
+    mechWarrior,
+    steampunkMechanicalBird,
+    pikachu,
+  ],
 };

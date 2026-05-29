@@ -1,7 +1,11 @@
-Imagine finally understanding cellular structure not from memorizing textbook diagrams, but by actually holding a 3D cell model in your browser, rotating it to see how organelles fit together, zooming into mitochondria to understand energy production, and reading fun facts that make biology come alive. That "aha moment" when abstract concepts become visual understanding - that's what Show3D delivers to every user.
+What if every student could explore complex 3D scientific structures interactively, regardless of their school's budget or family's income?
 
-Show3D gives students the power to control their learning experience. Instead of passively viewing static illustrations, they actively explore biological structures at their own pace. They can compare plant and animal cells side-by-side, examine virus infection mechanisms in detailed 3D, prepare for microscope labs with visibility guides, and focus on exam-critical features highlighted by educators. The platform adapts to individual learning styles and speeds.
+Show3D makes this possible. This free, open-source platform puts professional-grade 3D visualization in every student's hands. Browse scientific models, click to load instantly, and explore every angle with intuitive touch or mouse controls. Each model includes fun facts, exam test points, and real-world connections that make learning engaging and effective.
 
-For teachers, Show3D transforms classroom demonstrations from "look at this diagram" to "let's explore this structure together." They project interactive 3D models, rotate to show different perspectives, zoom to highlight specific features, and watch student engagement soar. For students studying alone, the mobile-optimized interface means learning happens anywhere - during commutes, between classes, or at home.
+Benefits for users: Learn at your own pace with interactive 3D exploration, prepare for exams with highlighted test points, study on any device (phone, tablet, laptop), access rich educational context with every model, use built-in format converter and optimizer for your own 3D files.
 
-The platform is completely free with no registration required, removing all barriers to access. Underfunded schools get the same quality resources as wealthy institutions. Rural students access the same visualization tools as urban students. We're requesting directory inclusion because Show3D proves that quality education technology can be universally accessible, serving learners regardless of their circumstances or resources.
+No registration required. No paywalls. No installation. Just open a browser and start exploring. The platform works on any modern device with internet access, making quality science education truly accessible.
+
+We believe learning should be engaging, interactive, and available to all. Show3D delivers on this promise through modern web technology and education-focused design.
+
+We'd be honored to have Show3D listed in your directory to reach more learners who would benefit from free 3D science education tools.

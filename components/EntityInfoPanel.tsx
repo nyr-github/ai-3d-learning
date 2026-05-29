@@ -280,11 +280,11 @@ export function EntityInfoPanel({ entity, onRotateReset }: Props) {
 
   return (
     <aside
-      className="flex flex-col gap-3 h-full p-3"
+      className="flex flex-col gap-3 h-full p-3 "
       style={{ "--accent": entity.accent } as React.CSSProperties}
     >
       {/* Header Card */}
-      <InfoCard className="">
+      <InfoCard className="bg-transparent">
         <header className="relative">
           <div className="flex justify-between items-start">
             <div className=" space-y-2">

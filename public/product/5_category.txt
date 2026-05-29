@@ -1,20 +1,20 @@
-Education
-Science Tools
-Learning Platforms
-EdTech
-Biology Resources
+Education Technology
 3D Visualization
-Open Source Education
-STEM Learning
+Science Learning
+WebGL Application
+Model Converter
+Educational Tools
 Interactive Learning
-Educational Technology
-教育工具
-科学学习平台
-教育资源
-生物教学
+STEM Education
+Open Source Software
+Browser-based 3D
+教育技术
 3D可视化
-开源教育
-STEM学习
-互动学习平台
-在线教育工具
-数字教育资源
+科学学习平台
+WebGL应用
+模型转换工具
+教育软件
+互动学习
+STEM教育
+开源软件
+浏览器3D

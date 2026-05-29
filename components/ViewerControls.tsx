@@ -2,7 +2,7 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import type { OrbitControls } from "three-stdlib";
 import { RotateIcon, ResetIcon } from "@/components/icons";
-import { Move, Maximize2, Minimize2 } from "lucide-react";
+import { Move, Maximize2, Minimize2, Star } from "lucide-react";
 
 interface Props {
   autoRotate: boolean;
@@ -10,6 +10,8 @@ interface Props {
   onReset: () => void;
   isFullscreen?: boolean;
   onToggleFullscreen?: () => void;
+  isRedCarpetPlaying?: boolean;
+  onTriggerRedCarpet?: () => void;
 }
 
 /** 3D Viewer Toolbar Component - Educational Demo Style */
@@ -19,6 +21,8 @@ export function ViewerToolbar({
   onReset,
   isFullscreen = false,
   onToggleFullscreen,
+  isRedCarpetPlaying = false,
+  onTriggerRedCarpet,
 }: Props) {
   return (
     <div className="absolute hidden  top-4 right-4 z-10 sm:flex gap-2 bg-(--bg-card)/95 border border-(--border-primary) px-2 py-2 rounded-xl backdrop-blur-md shadow-lg sm:top-3 sm:right-3 sm:px-1.5 sm:py-1.5">
@@ -55,6 +59,19 @@ export function ViewerToolbar({
       >
         <ResetIcon />
         Reset
+      </button>
+      <button
+        type="button"
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 border sm:px-2.5 sm:py-1 sm:text-[11px] ${
+          isRedCarpetPlaying
+            ? "bg-linear-to-r from-amber-500 to-orange-500 text-white border-transparent shadow-md"
+            : "bg-(--bg-card) text-(--ink-secondary) border-(--border-primary) hover:border-(--border-accent) hover:bg-(--bg-hover)"
+        }`}
+        onClick={onTriggerRedCarpet}
+        disabled={isRedCarpetPlaying}
+      >
+        <Star className="w-3.5 h-3.5" />
+        {isRedCarpetPlaying ? "Playing..." : "Red Carpet"}
       </button>
     </div>
   );
@@ -122,6 +139,9 @@ export function useViewerControls() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  // Expose controlsRef for use in other components
+  const getControlsRef = () => controlsRef;
+
   const handleReset = () => {
     const controls = controlsRef.current;
     if (!controls) return;
@@ -175,5 +195,6 @@ export function useViewerControls() {
     handleReset,
     handleToggleRotate,
     handleToggleFullscreen,
+    getControlsRef,
   };
 }
